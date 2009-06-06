@@ -3,20 +3,13 @@
 #   Gather statistics from git diff data, Jira reports, and Cruise Control
 #
 # == Usage
-#   commit_stats.rb [-h|--help] [-o|--output PATH] [-s|--since DATE] [LOG_FILE]
+#   commit_stats.rb [-h|--help] [-o|--output PATH] [-s|--since DATE]
 # 
 # PATH::
 #   The path to write the statistics data to.
-# LOG_FILE::
-#   Path to a file containing git log data.
-#   If unspecified, `git log` will be run instead.
 # DATE::
-#   Tell git to go back to DATE when gathering log data.  This option is only
-#   meaningful if LOG_FILE is _not_ set.
+#   Tell git to go back to DATE when gathering log data.
 # 
-# == Example
-# git log --unified=5 --no-color --text --since=2009-01-01
-#
 
 require "rdoc/usage"
 require "optparse"

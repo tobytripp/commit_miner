@@ -30,6 +30,16 @@ Setup your configuration by creating a +commit_stats.config.rb+ file in
 use the +commit_stats.config.rb.example+ file as an ... example.
 
 
+== Usage:
+
+  commit_stats.rb [-h|--help] [-o|--output PATH] [-s|--since DATE]
+
+PATH::
+  The path to write the statistics data to.
+DATE::
+  Tell git to go back to DATE when gathering log data.
+
+
 == TODO
 
 * Yeah, everything's still called 'commit_stats' ... I'll get to it

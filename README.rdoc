@@ -1,0 +1,38 @@
+= Commit Miner
+
+== Description
+
+Commit Miner is a set of tools for mining data from your source code repository,
+bugbase (if you're unfortunate enough to have one), and your continuous 
+integration server.
+
+Use this data to create reports, call out your friends, or spot bad coding
+practices.
+
+
+== Supported Data Sources:
+
+Currently only the following repositories are supported:
+* Git
+* Jira
+* CruiseControl
+
+
+== Installation:
+
+Check out the source:
+  git clone git://github.com/tobytripp/commit_miner.git
+
+Setup your configuration by creating a +commit_stats.config.rb+ file in
+* your home directory
+* the ~/.commit_stats directory
+* or, your project directory
+use the +commit_stats.config.rb.example+ file as an ... example.
+
+
+== TODO
+
+* Yeah, everything's still called 'commit_stats' ... I'll get to it
+* Gem-ify it
+* Add an option to only run certain miners
+* Add Mingle support (?)

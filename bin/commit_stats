@@ -1,0 +1,51 @@
+#!/usr/bin/env ruby -KU
+# == Synopsis
+#   Gather statistics from git diff data, Jira reports, and Cruise Control
+#
+# == Usage
+#   commit_stats.rb [-h|--help] [-o|--output PATH] [-s|--since DATE] [LOG_FILE]
+# 
+# PATH::
+#   The path to write the statistics data to.
+# LOG_FILE::
+#   Path to a file containing git log data.
+#   If unspecified, `git log` will be run instead.
+# DATE::
+#   Tell git to go back to DATE when gathering log data.  This option is only
+#   meaningful if LOG_FILE is _not_ set.
+# 
+# == Example
+# git log --unified=5 --no-color --text --since=2009-01-01
+#
+
+require "rdoc/usage"
+require "optparse"
+
+# TODO: Update to use gem path
+require File.dirname( __FILE__ ) + "/../commit_stats"
+
+if __FILE__ == $PROGRAM_NAME
+  since_date = "2008-12-01"
+  outfile    =
+    File.expand_path "~/Documents/Code/stats.#{Time.now.strftime('%d%b%Y')}.csv"
+  report_only = false
+
+  opts = OptionParser.new
+  opts.on( "-h", "--help" )        { RDoc::usage 1 }
+  opts.on( "-o", "--output PATH" ) { |path| outfile    = path }
+  opts.on( "-s", "--since  DATE" ) { |date| since_date = date}
+  opts.on( "-r", "--report-only" ) { report_only = true }
+  opts.parse!( ARGV ) rescue RDoc::usage( 'usage' )
+
+  git_log = ARGV.first
+
+  report = CommitStats::Report.new(
+    :since_date  => since_date,
+    :output_path => outfile,
+    :git_log     => git_log,
+    :report_only => report_only
+  )
+  
+  report.generate
+  puts report.tests_and_cowboys.to_csv
+end

@@ -1,0 +1,7 @@
+configurate do |config|
+  config.git_repo       = "."
+  config.jira_url       = "http://jira"
+
+  config.cruise_url     = 'http://jira'
+  config.cruise_project = "my_project"
+end

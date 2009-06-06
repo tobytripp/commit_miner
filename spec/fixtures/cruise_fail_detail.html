@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <link href="/dashboard/css/main.css" rel="stylesheet" type="text/css"></link>
+	<!--[if lte IE 7]>
+    	<link href="/dashboard/css/ie_hacks.css" rel="stylesheet" type="text/css"></link>
+	<![endif]-->
+    <link href="/dashboard/css/niftyCorners.css" rel="stylesheet" type="text/css"></link>
+    <script type="text/javascript">
+        var contextPath = "/dashboard"
+        var global_force_build_enabled = true
+    </script>
+    <script src="/dashboard/compressed/all.js" type="text/javascript"></script><link href="/dashboard/css/build_common.css" rel="stylesheet" title="Dashboard style sheet" type="text/css"/>
+<link href="/dashboard/css/build_detail_summary.css" rel="stylesheet" title="Dashboard style sheet" type="text/css"/>
+<link href="/dashboard/css/sub_tab.css" rel="stylesheet" title="Dashboard style sheet" type="text/css"/>
+<link href="/dashboard/css/build_detail.css" rel="stylesheet" title="Dashboard style sheet" type="text/css"/>
+<link href="/dashboard/css/toolkit.css" rel="stylesheet" title="Dashboard style sheet" type="text/css"/>
+<link href="/dashboard/css/transparent_message.css" rel="stylesheet" title="Dashboard style sheet" type="text/css"/>
+
+<title>Project project - Build 2009-01-06T03:33:11.000-06:00</title>
+</head>
+<body>
+    <div id="doc3" class="yui-t7">
+           
+<div id="header">
+	<div id="menu">
+		<div id="pageTitle">
+		    Dashboard Server : cruise.me.com
+		</div>
+		<div id="logo">
+		   <img src="/dashboard/images/logo.gif" alt="Cruise Control" width="195" height="42"/>
+		</div>
+	    <ul>
+				<li id="dashboard" class='dynamic_width round_top '>
+                    <a href="/dashboard/tab/dashboard"><span>Dashboard</span></a>
+                </li>
+                <li id="builds" class='dynamic_width round_top currenttab'>
+                    <a href="/dashboard/tab/builds"><span>Builds</span></a>
+                </li>
+				<li id="administation" class="dynamic_width round_top " style="float:right">
+                    <a href="/dashboard/admin/config" ><span>Administration</span></a>
+                </li>
+	    </ul>
+	</div>
+	<div id="menu_bottom">
+	</div>
+</div>
+<div id="content">
+                   <div id="bd">
+                        <div class="yui-ge">
+                            <div class="yui-u first">
+                                                                <div class="maincol build_detail">
+                                    
+<div class="round_corner" id="build_detail_summary_container">
+    <div class="build_detail_summary">
+        <div class="control_panel">
+           <a id="project_forcebuild" class="force_build_link"></a>
+           <a id="project_config_panel" class="config_panel_link"></a>
+        </div>
+        <h3 >project failed (2 months ago)</h3>
+		<div class="relative_box">
+    <div id="toolkit_project" class="toolkit_panel" style="display:none;">
+        <div class="toolkit_entry">
+            <span class="title wbrSensitive">project</span>
+            <span class="close" onclick="new Toolkit().hide('toolkit_project', event)">X</span>
+            <span class="clear"></span>
+        </div>
+        <div class="clear"></div>
+           <div class="toolkit_entry">
+            <a href="/dashboard/rss.xml?projectName=project" class="toolkit_rss">RSS</a>
+        </div>
+        <div class="toolkit_entry">
+            <a href="/dashboard/admin/mx4j/project" class="toolkit_jmx">JMX Console</a>
+        </div>
+    </div>
+</div>        <ul class="summary">
+		    <li><strong>Build Time:</strong> 6 Jan 2009 03:33 GMT -06:00</li>
+		    <li><strong>Duration:</strong> 4 minute(s) 38 second(s)</li>
+					    	<li><strong>Previous successful build:</strong> about 4 hours ago</li>
+			        </ul>
+
+		<div class="clear">&nbsp;</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	json_to_css.update_build_detail_header(eval({ "building_info" : { "previous_result" : "Failed", "level" : "8", "project_name" : "project", "latest_build_date" : "2 months ago", "current_status" : "Waiting" } }))
+	json_to_css.update_config_panel(eval({ "building_info" : { "previous_result" : "Failed", "level" : "8", "project_name" : "project", "latest_build_date" : "2 months ago", "current_status" : "Waiting" } }))
+	json_to_css.update_force_build(eval({ "building_info" : { "previous_result" : "Failed", "level" : "8", "project_name" : "project", "latest_build_date" : "2 months ago", "current_status" : "Waiting" } }))
+</script>
+
+<div id="trans_message" style="position:absolute;display:none">
+    <b class="rtop" style="display:block;background-color: transparent;">
+       <b class="r1"></b>
+       <b class="r2"></b>
+       <b class="r3"></b>
+       <b class="r4"></b>
+    </b>
+    <div class="transparent_message" id="trans_content"></div>
+    <b class="rbottom" style="display:block;background-color: transparent;">
+        <b class="r4"></b>
+        <b class="r3"></b>
+        <b class="r2"></b>
+        <b class="r1"></b>
+    </b>    
+</div>
+<div class="build_detail_container">
+    
+    <div class="sub_tab_container_menu">
+        <ul>
+        	<li class="current_tab tab_toggle"><a><span>Tests</span></a></li>
+            <li class="tab_toggle"><a><span>Modifications</span></a></li>
+            <li class="tab_toggle"><a><span>Build Log</span></a></li>
+            <li class="tab_toggle"><a><span>Artifacts</span></a></li>
+                        <li class="tab_toggle"><a><span>Errors and Warnings</span></a></li>
+            </ul>
+    </div>
+    
+    <div class="sub_tab_container_content">
+                <div id="tests" class="widget" >
+
+	<div>
+        <span id="expand_all" onclick="expand_all()">Expand All</span>
+        <span id="collapse_all" onclick="collapse_all()">Collapse All</span>
+    </div>
+
+    <div>
+        <h2 class="collapsible_title title_message_collapsed">Test Suites (377)</h2>
+                <div id="test_suites" class="collapsible_content" style="display:none;">
+            <ul>
+                <li>
+                    com.example.project.ui.answers.experts.app.server.UserHomeProfileServiceTest <br/>
+                    Tests: 1, Failures: 0, Errors:
+                    0, Duration: 0.02
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+	</div>
+
+                <div id="modifications" class="widget" style='display:none'>
+    <h2>Modifications</h2>
+                <table class="modifications">
+
+            <tbody>
+                <tr class="comment"><td title="user" class="user">svnuser</td><td>Pair1/Pair2: Removed mule dependency from project codebase.</td></tr>
+                
+                    <tr>
+                        <td>[rev. 38946]</td><td title="deleted"><img src="/dashboard/images/table_deleted.gif" alt="deleted"/>/project/trunk/project-service/src/main/java/com/example/project/service/event/EventServiceImpl.java</td>
+                    </tr>
+
+                
+                    <tr>
+                        <td>[rev. 38946]</td><td title="modified"><img src="/dashboard/images/table_modified.gif" alt="modified"/>/project/trunk/project-web-mvn/src/test/resources/applicationContext-service-build.xml</td>
+                    </tr>
+
+                
+                    <tr>
+                        <td>[rev. 38946]</td><td title="deleted"><img src="/dashboard/images/table_deleted.gif" alt="deleted"/>/project/trunk/project-web-mvn/src/main/webapp/WEB-INF/mule-config.xml</td>
+                    </tr>
+
+                
+                    <tr>
+                        <td>[rev. 38946]</td><td title="deleted"><img src="/dashboard/images/table_deleted.gif" alt="deleted"/>/project/trunk/project-web-mvn/src/test/resources/mule-config.xml</td>
+                    </tr>
+
+                
+                    <tr>
+                        <td>[rev. 38946]</td><td title="deleted"><img src="/dashboard/images/table_deleted.gif" alt="deleted"/>/project/trunk/project-service/src/main/java/com/example/project/service/customerload/KioskApplianceSelectEmailServiceImpl.java</td>
+                    </tr>
+
+                
+                    <tr>
+                        <td>[rev. 38946]</td><td title="modified"><img src="/dashboard/images/table_modified.gif" alt="modified"/>/project/trunk/project-web-mvn/src/main/webapp/WEB-INF/applicationContext-mule.xml</td>
+                    </tr>
+
+                
+                    <tr>
+                        <td>[rev. 38946]</td><td title="modified"><img src="/dashboard/images/table_modified.gif" alt="modified"/>/project/trunk/project-web-mvn/src/main/webapp/WEB-INF/applicationContext.xml</td>
+                    </tr>
+
+                
+                    <tr>
+                        <td>[rev. 38946]</td><td title="modified"><img src="/dashboard/images/table_modified.gif" alt="modified"/>/project/trunk/project-base/pom.xml</td>
+                    </tr>
+
+                
+                    <tr>
+                        <td>[rev. 38946]</td><td title="modified"><img src="/dashboard/images/table_modified.gif" alt="modified"/>/project/trunk/project-web-mvn/pom.xml</td>
+                    </tr>
+
+                
+                    <tr>
+                        <td>[rev. 38946]</td><td title="modified"><img src="/dashboard/images/table_modified.gif" alt="modified"/>/project/trunk/project-web-mvn/src/test/java/com/example/project/actions/registration/LoginActionTest.java</td>
+                    </tr>
+
+                
+                    <tr>
+                        <td>[rev. 38946]</td><td title="deleted"><img src="/dashboard/images/table_deleted.gif" alt="deleted"/>/project/trunk/project-service/src/main/java/com/example/project/service/customerload/KioskApplianceSelectEmailService.java</td>
+                    </tr>
+
+                
+                    <tr>
+                        <td>[rev. 38946]</td><td title="deleted"><img src="/dashboard/images/table_deleted.gif" alt="deleted"/>/project/trunk/project-web-mvn/src/main/java/org/mule/extras/spring/config/SpringMuleBootstrap.java</td>
+                    </tr>
+
+                
+                    <tr>
+                        <td>[rev. 38946]</td><td title="modified"><img src="/dashboard/images/table_modified.gif" alt="modified"/>/project/trunk/project-common-utils/pom.xml</td>
+                    </tr>
+
+                
+                    <tr>
+                        <td>[rev. 38946]</td><td title="modified"><img src="/dashboard/images/table_modified.gif" alt="modified"/>/project/trunk/project-admin/pom.xml</td>
+                    </tr>
+
+                
+                    <tr>
+                        <td>[rev. 38946]</td><td title="modified"><img src="/dashboard/images/table_modified.gif" alt="modified"/>/project/trunk/project-service/src/test/resources/applicationContext-service-build.xml</td>
+                    </tr>
+
+                
+                    <tr>
+                        <td>[rev. 38946]</td><td title="modified"><img src="/dashboard/images/table_modified.gif" alt="modified"/>/project/trunk/project-web-mvn/src/main/java/com/example/project/actions/registration/LoginAction.java</td>
+                    </tr>
+
+                
+                    <tr>
+                        <td>[rev. 38946]</td><td title="modified"><img src="/dashboard/images/table_modified.gif" alt="modified"/>/project/trunk/project-service/pom.xml</td>
+                    </tr>
+
+                            </tbody>
+        </table>
+    </div>
+
+                <div id="build_log" class="widget"  style='display:none'>
+    <h2>Build Log</h2>
+    <span class="logfile"><a href="/dashboard/tab/build/download/log/project/log20090106033311.xml">Download log</a></span>
+</div>
+
+                <div class="widget" id="artifacts" style='display:none'>
+    <h2>Artifacts</h2>
+    <div class="files">
+                    <p>No artifacts found.</p>
+                    </div>
+</div>
+    
+		    <div id="errors_and_warnings" class="widget" style="display:none">
+                    <div><h2>Build Error Message</h2>Return code is 1<hr/><h2 class="collapsible_title title_message_collapsed">Errors and Warnings</h2><div id='errors_and_warnings_element' class='collapsible_content' style='display:none;'><pre>[ERROR] ResourceManager : unable to find resource 'VM_global_library.vm' in any resource loader.&lt;br/&gt;[INFO] Using default encoding to copy filtered resources.&lt;br/&gt;[WARNING] POM for 'org.apache.santuario:xmlsec:pom:1.4.0:compile' is invalid. It will be ignored for artifact resolution. Reason: Not a v4.0.0 POM. for project org.apache.santuario:xmlsec at /home/cruiseadm/.m2/repository/org/apache/santuario/xmlsec/1.4.0/xmlsec-1.4.0.pom&lt;br/&gt;[WARNING] POM for 'axis:axis-jaxrpc:pom:1.4:compile' is invalid. It will be ignored for artifact resolution. Reason: Not a v4.0.0 POM. for project axis:axis-jaxrpc at /home/cruiseadm/.m2/repository/axis/axis-jaxrpc/1.4/axis-jaxrpc-1.4.pom&lt;br/&gt;[WARNING] POM for 'axis:axis-saaj:pom:1.4:compile' is invalid. It will be ignored for artifact resolution. Reason: Not a v4.0.0 POM. for project axis:axis-saaj at /home/cruiseadm/.m2/repository/axis/axis-saaj/1.4/axis-saaj-1.4.pom&lt;br/&gt;[WARNING] POM for 'org.apache.santuario:xmlsec:pom:1.4.0:compile' is invalid. It will be ignored for artifact resolution. Reason: Not a v4.0.0 POM. for project org.apache.santuario:xmlsec at /home/cruiseadm/.m2/repository/org/apache/santuario/xmlsec/1.4.0/xmlsec-1.4.0.pom&lt;br/&gt;[WARNING] POM for 'axis:axis-jaxrpc:pom:1.4:compile' is invalid. It will be ignored for artifact resolution. Reason: Not a v4.0.0 POM. for project axis:axis-jaxrpc at /home/cruiseadm/.m2/repository/axis/axis-jaxrpc/1.4/axis-jaxrpc-1.4.pom&lt;br/&gt;[WARNING] POM for 'axis:axis-saaj:pom:1.4:compile' is invalid. It will be ignored for artifact resolution. Reason: Not a v4.0.0 POM. for project axis:axis-saaj at /home/cruiseadm/.m2/repository/axis/axis-saaj/1.4/axis-saaj-1.4.pom&lt;br/&gt;[WARNING] POM for 'net.sf.dozer:dozer:pom:4.1:compile' is invalid. It will be ignored for artifact resolution. Reason: Not a v4.0.0 POM. for project net.sf.dozer:dozer at /home/cruiseadm/.m2/repository/net/sf/dozer/dozer/4.1/dozer-4.1.pom&lt;br/&gt;[WARNING] POM for 'org.ddsteps:ddsteps-httpserver-mock:pom:1.0-m1:compile' is invalid. It will be ignored for artifact resolution. Reason: Not a v4.0.0 POM. for project org.ddsteps:ddsteps-httpserver-mock at /home/cruiseadm/.m2/repository/org/ddsteps/ddsteps-httpserver-mock/1.0-m1/ddsteps-httpserver-mock-1.0-m1.pom&lt;br/&gt;[WARNING] POM for 'com.verid:verid-ws:pom:1.0:compile' is invalid. It will be ignored for artifact resolution. Reason: Not a v4.0.0 POM. for project com.verid:verid-ws at /home/cruiseadm/.m2/repository/com/verid/verid-ws/1.0/verid-ws-1.0.pom&lt;br/&gt;Downloading: http://m2repo.kih.kmart.com:8888/repository/org/safehaus/jug/jug/2.0.0/jug-2.0.0.jar&lt;br/&gt;[INFO] ------------------------------------------------------------------------&lt;br/&gt;[ERROR] BUILD ERROR&lt;br/&gt;[INFO] ------------------------------------------------------------------------&lt;br/&gt;[INFO] Failed to resolve artifact.&lt;br/&gt;Missing:&lt;br/&gt;----------&lt;br/&gt;1) org.safehaus.jug:jug:jar:2.0.0&lt;br/&gt;Try downloading the file manually from the project website.&lt;br/&gt;Then, install it using the command:&lt;br/&gt;mvn install:install-file -DgroupId=org.safehaus.jug -DartifactId=jug \&lt;br/&gt;-Dversion=2.0.0 -Dpackaging=jar -Dfile=/path/to/file&lt;br/&gt;Alternatively, if you host your own repository you can deploy the file there:       mvn deploy:deploy-file -DgroupId=org.safehaus.jug -DartifactId=jug \&lt;br/&gt;-Dversion=2.0.0 -Dpackaging=jar -Dfile=/path/to/file \&lt;br/&gt;-Durl=[url] -DrepositoryId=[id]&lt;br/&gt;Path to dependency:&lt;br/&gt;1) project:project-service:jar:1.36.0-SNAPSHOT&lt;br/&gt;2) org.safehaus.jug:jug:jar:2.0.0&lt;br/&gt;----------&lt;br/&gt;1 required artifact is missing.&lt;br/&gt;for artifact:&lt;br/&gt;project:project-service:jar:1.36.0-SNAPSHOT&lt;br/&gt;from the specified remote repositories:&lt;br/&gt;central (http://m2repo.kih.kmart.com:8888/repository),&lt;br/&gt;snapshots (http://m2repo.kih.kmart.com:8888/repository)&lt;br/&gt;[INFO] ------------------------------------------------------------------------&lt;br/&gt;[INFO] For more information, run Maven with the -e switch&lt;br/&gt;[INFO] ------------------------------------------------------------------------&lt;br/&gt;[INFO] Total time: 4 minutes 37 seconds&lt;br/&gt;[INFO] Finished at: Tue Jan 06 03:37:49 CST 2009&lt;br/&gt;[INFO] Final Memory: 38M/63M&lt;br/&gt;[INFO] ------------------------------------------------------------------------&lt;br/&gt;</pre></div><hr/><h2 >Stacktrace</h2><div   ><pre>No stacktrace</pre></div></div>
+            </div>
+
+
+    </div>
+</div>                                </div>
+                            </div>
+                            <div class="yui-u">
+                                
+<div class="sidecol">
+    <p class="sidecol_header round_top"><span>Latest Builds</span>
+		<a id="project_all_builds" href="/dashboard/project/list/all/project" title="All builds"><img src="/dashboard/images/icon-view-all-builds.gif" width="20" height="20" alt="View all builds" /></a>
+		<a id="project_all_successful_builds" href="/dashboard/project/list/passed/project" title="All successful builds"><img src="/dashboard/images/icon-all-successful-builds.gif" width="20" height="20" alt="View all successful builds" /></a>
+	</p>
+    <ul class="buildlist">
+                    <li id="build_list_1">
+                <a href="/dashboard/tab/build/detail/project/20090320084052">about 1 hour ago build.41439</a>
+            </li>
+                    <li id="build_list_2">
+                <a href="/dashboard/tab/build/detail/project/20090320071037">about 2 hours ago build.41438</a>
+            </li>
+                    <li id="build_list_3">
+                <a href="/dashboard/tab/build/detail/project/20090320062227">about 3 hours ago build.41437</a>
+            </li>
+                    <li id="build_list_4">
+                <a href="/dashboard/tab/build/detail/project/20090320053336">about 4 hours ago build.41436</a>
+            </li>
+                    <li id="build_list_5">
+                <a href="/dashboard/tab/build/detail/project/20090320003743">about 9 hours ago build.41435</a>
+            </li>
+                    <li id="build_list_6">
+                <a href="/dashboard/tab/build/detail/project/20090320001656">about 9 hours ago build.41434</a>
+            </li>
+                    <li id="build_list_7">
+                <a href="/dashboard/tab/build/detail/project/20090319193529">about 14 hours ago build.41433</a>
+            </li>
+                    <li id="build_list_8">
+                <a href="/dashboard/tab/build/detail/project/20090319184422">about 15 hours ago build.41432</a>
+            </li>
+                    <li id="build_list_9">
+                <a href="/dashboard/tab/build/detail/project/20090319182518">about 15 hours ago build.41431</a>
+            </li>
+                    <li id="build_list_10">
+                <a href="/dashboard/tab/build/detail/project/20090319175555">about 16 hours ago build.41430</a>
+            </li>
+                    <li id="build_list_11">
+                <a href="/dashboard/tab/build/detail/project/20090319173158">about 16 hours ago build.41429</a>
+            </li>
+                    <li id="build_list_12">
+                <a href="/dashboard/tab/build/detail/project/20090319165240">about 17 hours ago build.41429</a>
+            </li>
+                    <li id="build_list_13">
+                <a href="/dashboard/tab/build/detail/project/20090319163333">about 17 hours ago build.41427</a>
+            </li>
+                    <li id="build_list_14">
+                <a href="/dashboard/tab/build/detail/project/20090319161241">about 17 hours ago </a>
+            </li>
+                    <li id="build_list_15">
+                <a href="/dashboard/tab/build/detail/project/20090319153223">about 18 hours ago build.41407</a>
+            </li>
+                    <li id="build_list_16">
+                <a href="/dashboard/tab/build/detail/project/20090319114310">about 22 hours ago </a>
+            </li>
+                    <li id="build_list_17">
+                <a href="/dashboard/tab/build/detail/project/20090318190237">1 day ago build.41406</a>
+            </li>
+                    <li id="build_list_18">
+                <a href="/dashboard/tab/build/detail/project/20090318171500">1 day ago build.41404</a>
+            </li>
+                    <li id="build_list_19">
+                <a href="/dashboard/tab/build/detail/project/20090318165249">1 day ago build.41403</a>
+            </li>
+                    <li id="build_list_20">
+                <a href="/dashboard/tab/build/detail/project/20090318152818">1 day ago build.41402</a>
+            </li>
+                    <li id="build_list_21">
+                <a href="/dashboard/tab/build/detail/project/20090318143426">1 day ago build.41400</a>
+            </li>
+                    <li id="build_list_22">
+                <a href="/dashboard/tab/build/detail/project/20090318140940">1 day ago build.41398</a>
+            </li>
+                    <li id="build_list_23">
+                <a href="/dashboard/tab/build/detail/project/20090318133947">1 day ago build.41397</a>
+            </li>
+                    <li id="build_list_24">
+                <a href="/dashboard/tab/build/detail/project/20090318122214">1 day ago build.41392</a>
+            </li>
+                    <li id="build_list_25">
+                <a href="/dashboard/tab/build/detail/project/20090318114318">1 day ago build.41392</a>
+            </li>
+            </ul>
+            <script type="text/javascript">
+            json_to_css.update_build_list(eval({ "building_info" : { "previous_result" : "Passed", "level" : "unknown", "project_name" : "project", "latest_build_date" : "about 1 hour ago", "current_status" : "Waiting" } }), 1)
+        </script>
+            <script type="text/javascript">
+            json_to_css.update_build_list(eval({ "building_info" : { "previous_result" : "Passed", "level" : "unknown", "project_name" : "project", "latest_build_date" : "about 2 hours ago", "current_status" : "Waiting" } }), 2)
+        </script>
+            <script type="text/javascript">
+            json_to_css.update_build_list(eval({ "building_info" : { "previous_result" : "Passed", "level" : "unknown", "project_name" : "project", "latest_build_date" : "about 3 hours ago", "current_status" : "Waiting" } }), 3)
+        </script>
+            <script type="text/javascript">
+            json_to_css.update_build_list(eval({ "building_info" : { "previous_result" : "Passed", "level" : "unknown", "project_name" : "project", "latest_build_date" : "about 4 hours ago", "current_status" : "Waiting" } }), 4)
+        </script>
+            <script type="text/javascript">
+            json_to_css.update_build_list(eval({ "building_info" : { "previous_result" : "Passed", "level" : "unknown", "project_name" : "project", "latest_build_date" : "about 9 hours ago", "current_status" : "Waiting" } }), 5)
+        </script>
+            <script type="text/javascript">
+            json_to_css.update_build_list(eval({ "building_info" : { "previous_result" : "Passed", "level" : "unknown", "project_name" : "project", "latest_build_date" : "about 9 hours ago", "current_status" : "Waiting" } }), 6)
+        </script>
+            <script type="text/javascript">
+            json_to_css.update_build_list(eval({ "building_info" : { "previous_result" : "Passed", "level" : "unknown", "project_name" : "project", "latest_build_date" : "about 14 hours ago", "current_status" : "Waiting" } }), 7)
+        </script>
+            <script type="text/javascript">
+            json_to_css.update_build_list(eval({ "building_info" : { "previous_result" : "Passed", "level" : "unknown", "project_name" : "project", "latest_build_date" : "about 15 hours ago", "current_status" : "Waiting" } }), 8)
+        </script>
+            <script type="text/javascript">
+            json_to_css.update_build_list(eval({ "building_info" : { "previous_result" : "Passed", "level" : "unknown", "project_name" : "project", "latest_build_date" : "about 15 hours ago", "current_status" : "Waiting" } }), 9)
+        </script>
+            <script type="text/javascript">
+            json_to_css.update_build_list(eval({ "building_info" : { "previous_result" : "Passed", "level" : "unknown", "project_name" : "project", "latest_build_date" : "about 16 hours ago", "current_status" : "Waiting" } }), 10)
+        </script>
+            <script type="text/javascript">
+            json_to_css.update_build_list(eval({ "building_info" : { "previous_result" : "Passed", "level" : "unknown", "project_name" : "project", "latest_build_date" : "about 16 hours ago", "current_status" : "Waiting" } }), 11)
+        </script>
+            <script type="text/javascript">
+            json_to_css.update_build_list(eval({ "building_info" : { "previous_result" : "Passed", "level" : "unknown", "project_name" : "project", "latest_build_date" : "about 17 hours ago", "current_status" : "Waiting" } }), 12)
+        </script>
+            <script type="text/javascript">
+            json_to_css.update_build_list(eval({ "building_info" : { "previous_result" : "Passed", "level" : "unknown", "project_name" : "project", "latest_build_date" : "about 17 hours ago", "current_status" : "Waiting" } }), 13)
+        </script>
+            <script type="text/javascript">
+            json_to_css.update_build_list(eval({ "building_info" : { "previous_result" : "Failed", "level" : "unknown", "project_name" : "project", "latest_build_date" : "about 17 hours ago", "current_status" : "Waiting" } }), 14)
+        </script>
+            <script type="text/javascript">
+            json_to_css.update_build_list(eval({ "building_info" : { "previous_result" : "Passed", "level" : "unknown", "project_name" : "project", "latest_build_date" : "about 18 hours ago", "current_status" : "Waiting" } }), 15)
+        </script>
+            <script type="text/javascript">
+            json_to_css.update_build_list(eval({ "building_info" : { "previous_result" : "Failed", "level" : "unknown", "project_name" : "project", "latest_build_date" : "about 22 hours ago", "current_status" : "Waiting" } }), 16)
+        </script>
+            <script type="text/javascript">
+            json_to_css.update_build_list(eval({ "building_info" : { "previous_result" : "Passed", "level" : "unknown", "project_name" : "project", "latest_build_date" : "1 day ago", "current_status" : "Waiting" } }), 17)
+        </script>
+            <script type="text/javascript">
+            json_to_css.update_build_list(eval({ "building_info" : { "previous_result" : "Passed", "level" : "unknown", "project_name" : "project", "latest_build_date" : "1 day ago", "current_status" : "Waiting" } }), 18)
+        </script>
+            <script type="text/javascript">
+            json_to_css.update_build_list(eval({ "building_info" : { "previous_result" : "Passed", "level" : "unknown", "project_name" : "project", "latest_build_date" : "1 day ago", "current_status" : "Waiting" } }), 19)
+        </script>
+            <script type="text/javascript">
+            json_to_css.update_build_list(eval({ "building_info" : { "previous_result" : "Passed", "level" : "unknown", "project_name" : "project", "latest_build_date" : "1 day ago", "current_status" : "Waiting" } }), 20)
+        </script>
+            <script type="text/javascript">
+            json_to_css.update_build_list(eval({ "building_info" : { "previous_result" : "Passed", "level" : "unknown", "project_name" : "project", "latest_build_date" : "1 day ago", "current_status" : "Waiting" } }), 21)
+        </script>
+            <script type="text/javascript">
+            json_to_css.update_build_list(eval({ "building_info" : { "previous_result" : "Passed", "level" : "unknown", "project_name" : "project", "latest_build_date" : "1 day ago", "current_status" : "Waiting" } }), 22)
+        </script>
+            <script type="text/javascript">
+            json_to_css.update_build_list(eval({ "building_info" : { "previous_result" : "Passed", "level" : "unknown", "project_name" : "project", "latest_build_date" : "1 day ago", "current_status" : "Waiting" } }), 23)
+        </script>
+            <script type="text/javascript">
+            json_to_css.update_build_list(eval({ "building_info" : { "previous_result" : "Passed", "level" : "unknown", "project_name" : "project", "latest_build_date" : "1 day ago", "current_status" : "Waiting" } }), 24)
+        </script>
+            <script type="text/javascript">
+            json_to_css.update_build_list(eval({ "building_info" : { "previous_result" : "Passed", "level" : "unknown", "project_name" : "project", "latest_build_date" : "1 day ago", "current_status" : "Waiting" } }), 25)
+        </script>
+    
+</div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+    </div>
+</body>
+</html>

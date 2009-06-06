@@ -1,0 +1,2343 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Report - Created vs Resolved Issues Report - example JIRA Issue Tracking </title>
+
+    <meta name="decorator" content="notitle">
+    <style type="text/css">
+    .jiraformbody
+    {
+        padding: 0 !important;
+    }
+    .excel
+    {
+        float:right;
+        text-align: right;
+        padding-top: .5em;
+        padding-right: .5em;
+        padding-bottom: .5em;
+    }
+    </style>
+    <style type="text/css" media="print">
+    .excel
+    {
+        display: none;
+    }
+    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="-1" />
+    
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+    <link rel="shortcut icon" href="/jira/s/335/1/_/favicon.ico">
+    <link rel="icon" type="image/png" href="/jira/s/335/1/_/images/icons/favicon.png">
+	
+
+
+
+
+<link rel="stylesheet" type="text/css" media="print" href="/jira/s/335/1/_/styles/combined-printable.css">
+<link type="text/css" rel="StyleSheet" media="all" href="/jira/s/335/1/_/styles/combined.css"/>
+<link type="text/css" rel="StyleSheet" media="all" href="/jira/s/335/1/1/_/styles/global.css"/>
+
+    <script language="JavaScript" type="text/javascript" src="/jira/s/335/1/_/includes/js/combined-javascript.js"></script>
+
+<script type="text/javascript" src="/jira/s/335/1/1.0/_/download/resources/jira.webresources:yui/yahoo-dom-event-min.js" ></script>
+<script type="text/javascript" src="/jira/s/335/1/1.0/_/download/resources/jira.webresources:yui-container/connection.js" ></script>
+<script type="text/javascript" src="/jira/s/335/1/1.0/_/download/resources/jira.webresources:yui-container/container.js" ></script>
+<link type="text/css" rel="stylesheet" href="/jira/s/335/1/1.0/_/download/resources/jira.webresources:yui-container/container.css" media="all"/>
+<script type="text/javascript" src="/jira/s/335/1/1.0/_/download/resources/jira.webresources:json/json.js" ></script>
+<script type="text/javascript" src="/jira/s/335/1/1.0/_/download/resources/jira.webresources:jira-menubutton/menubutton-widget.js" ></script>
+<link type="text/css" rel="stylesheet" href="/jira/s/335/1/1.0/_/download/resources/jira.webresources:jira-menubutton/menubutton-widget.css" media="all"/>
+
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body bgcolor="#f0f0f0" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" link="#003366" vlink="#003366" alink="#660000">
+
+
+<div id="header">
+    <div id="header-top">
+            <a id="logo" href="/jira/secure/Dashboard.jspa">
+                            <img class="logo" src="/jira/s/335/1/_/images/jira_logo_small.png" width="111" height="30" border="0" alt="example JIRA Issue Tracking">
+                        </a>
+            
+            <ul id="account-options">
+                <li>
+                    <a rel="nofollow" href="/jira/login.jsp?os_destination=%2Fsecure%2FConfigureReport.jspa%3Fcumulative%3Dfalse%26daysprevious%3D180%26periodName%3Ddaily%26projectOrFilterId%3Dproject-10010%26reportKey%3Dcom.atlassian.jira.ext.charting%253Acreatedvsresolved-report%26selectedProjectId%3D10010%26versionLabels%3Dmajor">Log In</a>
+                </li>
+                <li class="icon">
+                    <a rel="nofollow" href="http://jira.me.com/jira/secure/ConfigureReport.jspa?decorator=printable&cumulative=false&amp;daysprevious=180&amp;periodName=daily&amp;projectOrFilterId=project-10010&amp;reportKey=com.atlassian.jira.ext.charting%3Acreatedvsresolved-report&amp;selectedProjectId=10010&amp;versionLabels=major" ><img src="/jira/images/icons/print.gif" width="16" height="16" align="absmiddle" border="0" alt="View a printable version of the current page." title="View a printable version of the current page."></a>
+                </li>
+            <li class="icon">
+                    
+                    <a class="helpLink" href="http://www.atlassian.com/software/jira/docs/v3.13.2/index.html?clicked=jirahelp" target="_jirahelp">
+    
+        <img src="/jira/images/icons/help_blue.gif" width="16" height="16" align="absmiddle"
+            title="Get online help about Using and setting up JIRA"
+        /></a>
+
+                </li>
+    </ul>
+
+            
+    </div>
+    <div id="menu">
+        
+        <ul id="main-nav">
+        <li>
+        <a href="/jira/secure/Dashboard.jspa"
+                         id="home_link"             title="A configurable overview of JIRA"             accessKey="h"            ><u>h</u>ome</a>
+    </li>
+        <li>
+        <a href="/jira/secure/BrowseProject.jspa"
+                         id="browse_link"             title="Browse currently active project 'ManageMyHome'"             accessKey="b"            ><u>b</u>rowse project</a>
+    </li>
+        <li>
+        <a href="/jira/secure/IssueNavigator.jspa"
+                         id="find_link"             title="Find issues in the projects you have permissions to view"             accessKey="f"            ><u>f</u>ind issues</a>
+    </li>
+        <li>
+        <a href="/jira/secure/CreateIssue!default.jspa"
+                         id="create_link"             title="Create a new issue / bug / feature request / etc"             accessKey="c"            ><u>c</u>reate new issue</a>
+    </li>
+    </ul>
+
+        
+
+                <form id="quicksearch" action="/jira/secure/QuickSearch.jspa" method="post">
+            <label onclick="quickSearchTextBoxSetFocus();" onmouseover="showToolTip()" onmouseout="hideToolTip()">&nbsp; &nbsp;<u>Q</u>uick Search:</label>
+            <input id="quickSearchInput" class="quickSearchInput" title="Go directly to an issue by typing a valid issue key, or run a free-text search." type="text" size="25" name="searchString" accessKey="q"  valign="absmiddle" />
+        </form>
+        <div onmouseover="recordInTip()" onmouseout="recordOutTip()" id="quicksearchhelp" class="informationBox"
+             style="display: none; text-align: center; width: 20em; position: absolute; top: 55px; right: 10px; padding: 0.5em;">
+                        Learn more about <a href='http://www.atlassian.com/software/jira/docs/v3.13.2/quicksearch.html?clicked=jirahelp' target='_jirahelp'>Quick Search</a>
+        </div>
+            </div>
+</div>
+
+
+<!--This should always be included as it is not part of a themable plugin, instead it is core functionality-->
+
+<div class="alertHeader">
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 10">
+<meta name=Originator content="Microsoft Word 10">
+<link rel=File-List href="html_files/filelist.xml">
+<title>&lt;/html&gt;</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>pjorda4</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>pjorda4</o:LastAuthor>
+  <o:Revision>4</o:Revision>
+  <o:TotalTime>40</o:TotalTime>
+  <o:Created>2009-01-05T21:29:00Z</o:Created>
+  <o:LastSaved>2009-01-06T01:41:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>50</o:Words>
+  <o:Characters>285</o:Characters>
+  <o:Company>Kmart Corporation</o:Company>
+  <o:Lines>2</o:Lines>
+  <o:Paragraphs>1</o:Paragraphs>
+  <o:CharactersWithSpaces>334</o:CharactersWithSpaces>
+  <o:Version>10.6844</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+span.spelle
+	{mso-style-name:spelle;
+	border:solid #990000 1.5pt;
+	padding:0in;
+	font-weight:bold;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+</style>
+<![endif]-->
+</head>
+
+<body lang=EN-US style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-family:Arial;color:blue'>Enter JIRA requests via the Subversion/JIRA project. <o:p></o:p></span></b></p>
+</div>
+
+</body>
+
+</html>
+
+</div>
+
+
+
+
+
+<table cellspacing=0 cellpadding=10 border=0 width=100% bgcolor=ffffff><tr><td>
+    <table class="jiraform  maxWidth"
+       
+>
+
+
+<tr>
+    <td class="jiraformheader">
+    
+
+
+    <h3 class="formtitle">Report: <a href="ConfigureReport!default.jspa?reportKey=com.atlassian.jira.ext.charting:createdvsresolved-report">Created vs Resolved Issues Report</a></h3></td>
+</tr>
+
+
+	
+
+
+
+    <tr>
+    <td class="jiraformbody">
+        <table width="100%" class="report">
+<tr><th class="reportHeading">
+    <h3 class="formtitle">Project: <a href="/jira/browse/project">ManageMyHome</a></h3>
+</th></tr>
+
+    <tr>
+        <th class="subHeading">
+            <h3 class="bluetext">Chart</h3>
+        </th>
+    </tr>
+    <tr>
+        <td>
+            This chart shows the number of issues <b><span style='color:#c00;'>created</span></b> vs the number of issues <b><span style='color:#3c3;'>resolved</span></b> in the last <b>180</b> days..<br/>
+
+                                                <map id="chart-J0dVQ" name="chart-J0dVQ">
+<area shape="poly" coords="778,476,777,477,775,476,777,474,778,476,778,476" title="Resolved 2 issues" alt=""/>
+<area shape="poly" coords="778,480,777,481,775,480,777,478,778,480,778,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="774,476,773,477,771,476,773,474,774,476,774,476" title="Resolved 2 issues" alt=""/>
+<area shape="poly" coords="774,470,773,471,771,470,773,468,774,470,774,470" title="Created 5 issues" alt=""/>
+<area shape="poly" coords="770,474,769,475,767,474,769,472,770,474,770,474" title="Resolved 3 issues" alt=""/>
+<area shape="poly" coords="770,464,769,465,767,464,769,462,770,464,770,464" title="Created 8 issues" alt=""/>
+<area shape="poly" coords="766,464,765,465,763,464,765,462,766,464,766,464" title="Resolved 8 issues" alt=""/>
+<area shape="poly" coords="766,456,765,457,763,456,765,454,766,456,766,456" title="Created 12 issues" alt=""/>
+<area shape="poly" coords="762,466,761,467,759,466,761,464,762,466,762,466" title="Resolved 7 issues" alt=""/>
+<area shape="poly" coords="762,468,761,469,759,468,761,466,762,468,762,468" title="Created 6 issues" alt=""/>
+<area shape="poly" coords="758,480,757,481,755,480,757,478,758,480,758,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="758,480,757,481,755,480,757,478,758,480,758,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="754,480,752,481,751,480,752,478,754,480,754,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="754,480,752,481,751,480,752,478,754,480,754,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="750,456,748,457,747,456,748,454,750,456,750,456" title="Resolved 12 issues" alt=""/>
+<area shape="poly" coords="750,462,748,463,747,462,748,460,750,462,750,462" title="Created 9 issues" alt=""/>
+<area shape="poly" coords="746,456,744,457,743,456,744,454,746,456,746,456" title="Resolved 12 issues" alt=""/>
+<area shape="poly" coords="746,472,744,473,743,472,744,470,746,472,746,472" title="Created 4 issues" alt=""/>
+<area shape="poly" coords="742,436,740,438,739,436,740,435,742,436,742,436" title="Resolved 22 issues" alt=""/>
+<area shape="poly" coords="742,448,740,450,739,448,740,447,742,448,742,448" title="Created 16 issues" alt=""/>
+<area shape="poly" coords="738,458,736,459,735,458,736,456,738,458,738,458" title="Resolved 11 issues" alt=""/>
+<area shape="poly" coords="738,472,736,473,735,472,736,470,738,472,738,472" title="Created 4 issues" alt=""/>
+<area shape="poly" coords="734,476,732,477,731,476,732,474,734,476,734,476" title="Resolved 2 issues" alt=""/>
+<area shape="poly" coords="734,462,732,463,731,462,732,460,734,462,734,462" title="Created 9 issues" alt=""/>
+<area shape="poly" coords="730,480,728,481,727,480,728,478,730,480,730,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="730,480,728,481,727,480,728,478,730,480,730,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="726,480,724,481,723,480,724,478,726,480,726,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="726,480,724,481,723,480,724,478,726,480,726,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="722,468,720,469,719,468,720,466,722,468,722,468" title="Resolved 6 issues" alt=""/>
+<area shape="poly" coords="722,458,720,459,719,458,720,456,722,458,722,458" title="Created 11 issues" alt=""/>
+<area shape="poly" coords="718,468,716,469,715,468,716,466,718,468,718,468" title="Resolved 6 issues" alt=""/>
+<area shape="poly" coords="718,474,716,475,715,474,716,472,718,474,718,474" title="Created 3 issues" alt=""/>
+<area shape="poly" coords="713,460,712,461,710,460,712,458,713,460,713,460" title="Resolved 10 issues" alt=""/>
+<area shape="poly" coords="713,438,712,440,710,438,712,437,713,438,713,438" title="Created 21 issues" alt=""/>
+<area shape="poly" coords="709,478,708,479,706,478,708,476,709,478,709,478" title="Resolved 1 issues" alt=""/>
+<area shape="poly" coords="709,476,708,477,706,476,708,474,709,476,709,476" title="Created 2 issues" alt=""/>
+<area shape="poly" coords="705,478,704,479,702,478,704,476,705,478,705,478" title="Resolved 1 issues" alt=""/>
+<area shape="poly" coords="705,472,704,473,702,472,704,470,705,472,705,472" title="Created 4 issues" alt=""/>
+<area shape="poly" coords="701,480,700,481,698,480,700,478,701,480,701,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="701,480,700,481,698,480,700,478,701,480,701,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="697,480,696,481,694,480,696,478,697,480,697,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="697,480,696,481,694,480,696,478,697,480,697,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="693,472,692,473,690,472,692,470,693,472,693,472" title="Resolved 4 issues" alt=""/>
+<area shape="poly" coords="693,440,692,442,690,440,692,439,693,440,693,440" title="Created 20 issues" alt=""/>
+<area shape="poly" coords="689,420,688,422,686,420,688,419,689,420,689,420" title="Resolved 30 issues" alt=""/>
+<area shape="poly" coords="689,450,688,452,686,450,688,449,689,450,689,450" title="Created 15 issues" alt=""/>
+<area shape="poly" coords="685,384,683,386,682,384,683,383,685,384,685,384" title="Resolved 48 issues" alt=""/>
+<area shape="poly" coords="685,408,683,410,682,408,683,407,685,408,685,408" title="Created 36 issues" alt=""/>
+<area shape="poly" coords="681,446,679,448,678,446,679,445,681,446,681,446" title="Resolved 17 issues" alt=""/>
+<area shape="poly" coords="681,452,679,454,678,452,679,451,681,452,681,452" title="Created 14 issues" alt=""/>
+<area shape="poly" coords="677,444,675,446,674,444,675,443,677,444,677,444" title="Resolved 18 issues" alt=""/>
+<area shape="poly" coords="677,412,675,414,674,412,675,411,677,412,677,412" title="Created 34 issues" alt=""/>
+<area shape="poly" coords="673,454,671,455,670,454,671,452,673,454,673,454" title="Resolved 13 issues" alt=""/>
+<area shape="poly" coords="673,470,671,471,670,470,671,468,673,470,673,470" title="Created 5 issues" alt=""/>
+<area shape="poly" coords="669,470,667,471,666,470,667,468,669,470,669,470" title="Resolved 5 issues" alt=""/>
+<area shape="poly" coords="669,418,667,420,666,418,667,417,669,418,669,418" title="Created 31 issues" alt=""/>
+<area shape="poly" coords="665,432,663,434,662,432,663,431,665,432,665,432" title="Resolved 24 issues" alt=""/>
+<area shape="poly" coords="665,410,663,412,662,410,663,409,665,410,665,410" title="Created 35 issues" alt=""/>
+<area shape="poly" coords="661,460,659,461,658,460,659,458,661,460,661,460" title="Resolved 10 issues" alt=""/>
+<area shape="poly" coords="661,438,659,440,658,438,659,437,661,438,661,438" title="Created 21 issues" alt=""/>
+<area shape="poly" coords="656,472,655,473,653,472,655,470,656,472,656,472" title="Resolved 4 issues" alt=""/>
+<area shape="poly" coords="656,452,655,454,653,452,655,451,656,452,656,452" title="Created 14 issues" alt=""/>
+<area shape="poly" coords="652,440,651,442,649,440,651,439,652,440,652,440" title="Resolved 20 issues" alt=""/>
+<area shape="poly" coords="652,460,651,461,649,460,651,458,652,460,652,460" title="Created 10 issues" alt=""/>
+<area shape="poly" coords="648,470,647,471,645,470,647,468,648,470,648,470" title="Resolved 5 issues" alt=""/>
+<area shape="poly" coords="648,464,647,465,645,464,647,462,648,464,648,464" title="Created 8 issues" alt=""/>
+<area shape="poly" coords="644,480,643,481,641,480,643,478,644,480,644,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="644,480,643,481,641,480,643,478,644,480,644,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="640,480,639,481,637,480,639,478,640,480,640,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="640,480,639,481,637,480,639,478,640,480,640,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="636,464,635,465,633,464,635,462,636,464,636,464" title="Resolved 8 issues" alt=""/>
+<area shape="poly" coords="636,474,635,475,633,474,635,472,636,474,636,474" title="Created 3 issues" alt=""/>
+<area shape="poly" coords="632,426,631,428,629,426,631,425,632,426,632,426" title="Resolved 27 issues" alt=""/>
+<area shape="poly" coords="632,450,631,452,629,450,631,449,632,450,632,450" title="Created 15 issues" alt=""/>
+<area shape="poly" coords="628,458,626,459,625,458,626,456,628,458,628,458" title="Resolved 11 issues" alt=""/>
+<area shape="poly" coords="628,468,626,469,625,468,626,466,628,468,628,468" title="Created 6 issues" alt=""/>
+<area shape="poly" coords="624,454,622,455,621,454,622,452,624,454,624,454" title="Resolved 13 issues" alt=""/>
+<area shape="poly" coords="624,448,622,450,621,448,622,447,624,448,624,448" title="Created 16 issues" alt=""/>
+<area shape="poly" coords="620,470,618,471,617,470,618,468,620,470,620,470" title="Resolved 5 issues" alt=""/>
+<area shape="poly" coords="620,462,618,463,617,462,618,460,620,462,620,462" title="Created 9 issues" alt=""/>
+<area shape="poly" coords="616,480,614,481,613,480,614,478,616,480,616,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="616,478,614,479,613,478,614,476,616,478,616,478" title="Created 1 issues" alt=""/>
+<area shape="poly" coords="612,480,610,481,609,480,610,478,612,480,612,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="612,480,610,481,609,480,610,478,612,480,612,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="608,470,606,471,605,470,606,468,608,470,608,470" title="Resolved 5 issues" alt=""/>
+<area shape="poly" coords="608,466,606,467,605,466,606,464,608,466,608,466" title="Created 7 issues" alt=""/>
+<area shape="poly" coords="604,450,602,452,601,450,602,449,604,450,604,450" title="Resolved 15 issues" alt=""/>
+<area shape="poly" coords="604,444,602,446,601,444,602,443,604,444,604,444" title="Created 18 issues" alt=""/>
+<area shape="poly" coords="599,462,598,463,596,462,598,460,599,462,599,462" title="Resolved 9 issues" alt=""/>
+<area shape="poly" coords="599,452,598,454,596,452,598,451,599,452,599,452" title="Created 14 issues" alt=""/>
+<area shape="poly" coords="595,468,594,469,592,468,594,466,595,468,595,468" title="Resolved 6 issues" alt=""/>
+<area shape="poly" coords="595,464,594,465,592,464,594,462,595,464,595,464" title="Created 8 issues" alt=""/>
+<area shape="poly" coords="591,474,590,475,588,474,590,472,591,474,591,474" title="Resolved 3 issues" alt=""/>
+<area shape="poly" coords="591,470,590,471,588,470,590,468,591,470,591,470" title="Created 5 issues" alt=""/>
+<area shape="poly" coords="587,480,586,481,584,480,586,478,587,480,587,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="587,480,586,481,584,480,586,478,587,480,587,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="583,480,582,481,580,480,582,478,583,480,583,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="583,480,582,481,580,480,582,478,583,480,583,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="579,464,578,465,576,464,578,462,579,464,579,464" title="Resolved 8 issues" alt=""/>
+<area shape="poly" coords="579,460,578,461,576,460,578,458,579,460,579,460" title="Created 10 issues" alt=""/>
+<area shape="poly" coords="575,430,574,432,572,430,574,429,575,430,575,430" title="Resolved 25 issues" alt=""/>
+<area shape="poly" coords="575,448,574,450,572,448,574,447,575,448,575,448" title="Created 16 issues" alt=""/>
+<area shape="poly" coords="571,418,569,420,568,418,569,417,571,418,571,418" title="Resolved 31 issues" alt=""/>
+<area shape="poly" coords="571,412,569,414,568,412,569,411,571,412,571,412" title="Created 34 issues" alt=""/>
+<area shape="poly" coords="567,446,565,448,564,446,565,445,567,446,567,446" title="Resolved 17 issues" alt=""/>
+<area shape="poly" coords="567,452,565,454,564,452,565,451,567,452,567,452" title="Created 14 issues" alt=""/>
+<area shape="poly" coords="563,454,561,455,560,454,561,452,563,454,563,454" title="Resolved 13 issues" alt=""/>
+<area shape="poly" coords="563,440,561,442,560,440,561,439,563,440,563,440" title="Created 20 issues" alt=""/>
+<area shape="poly" coords="559,478,557,479,556,478,557,476,559,478,559,478" title="Resolved 1 issues" alt=""/>
+<area shape="poly" coords="559,478,557,479,556,478,557,476,559,478,559,478" title="Created 1 issues" alt=""/>
+<area shape="poly" coords="555,480,553,481,552,480,553,478,555,480,555,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="555,480,553,481,552,480,553,478,555,480,555,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="551,448,549,450,548,448,549,447,551,448,551,448" title="Resolved 16 issues" alt=""/>
+<area shape="poly" coords="551,434,549,436,548,434,549,433,551,434,551,434" title="Created 23 issues" alt=""/>
+<area shape="poly" coords="547,468,545,469,544,468,545,466,547,468,547,468" title="Resolved 6 issues" alt=""/>
+<area shape="poly" coords="547,462,545,463,544,462,545,460,547,462,547,462" title="Created 9 issues" alt=""/>
+<area shape="poly" coords="542,454,541,455,539,454,541,452,542,454,542,454" title="Resolved 13 issues" alt=""/>
+<area shape="poly" coords="542,460,541,461,539,460,541,458,542,460,542,460" title="Created 10 issues" alt=""/>
+<area shape="poly" coords="538,462,537,463,535,462,537,460,538,462,538,462" title="Resolved 9 issues" alt=""/>
+<area shape="poly" coords="538,462,537,463,535,462,537,460,538,462,538,462" title="Created 9 issues" alt=""/>
+<area shape="poly" coords="534,452,533,454,531,452,533,451,534,452,534,452" title="Resolved 14 issues" alt=""/>
+<area shape="poly" coords="534,462,533,463,531,462,533,460,534,462,534,462" title="Created 9 issues" alt=""/>
+<area shape="poly" coords="530,480,529,481,527,480,529,478,530,480,530,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="530,480,529,481,527,480,529,478,530,480,530,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="526,480,525,481,523,480,525,478,526,480,526,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="526,480,525,481,523,480,525,478,526,480,526,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="522,474,521,475,519,474,521,472,522,474,522,474" title="Resolved 3 issues" alt=""/>
+<area shape="poly" coords="522,464,521,465,519,464,521,462,522,464,522,464" title="Created 8 issues" alt=""/>
+<area shape="poly" coords="518,426,516,428,515,426,516,425,518,426,518,426" title="Resolved 27 issues" alt=""/>
+<area shape="poly" coords="518,470,516,471,515,470,516,468,518,470,518,470" title="Created 5 issues" alt=""/>
+<area shape="poly" coords="514,440,512,442,511,440,512,439,514,440,514,440" title="Resolved 20 issues" alt=""/>
+<area shape="poly" coords="514,458,512,459,511,458,512,456,514,458,514,458" title="Created 11 issues" alt=""/>
+<area shape="poly" coords="510,444,508,446,507,444,508,443,510,444,510,444" title="Resolved 18 issues" alt=""/>
+<area shape="poly" coords="510,454,508,455,507,454,508,452,510,454,510,454" title="Created 13 issues" alt=""/>
+<area shape="poly" coords="506,430,504,432,503,430,504,429,506,430,506,430" title="Resolved 25 issues" alt=""/>
+<area shape="poly" coords="506,444,504,446,503,444,504,443,506,444,506,444" title="Created 18 issues" alt=""/>
+<area shape="poly" coords="502,480,500,481,499,480,500,478,502,480,502,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="502,480,500,481,499,480,500,478,502,480,502,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="498,478,496,479,495,478,496,476,498,478,498,478" title="Resolved 1 issues" alt=""/>
+<area shape="poly" coords="498,476,496,477,495,476,496,474,498,476,498,476" title="Created 2 issues" alt=""/>
+<area shape="poly" coords="494,460,492,461,491,460,492,458,494,460,494,460" title="Resolved 10 issues" alt=""/>
+<area shape="poly" coords="494,470,492,471,491,470,492,468,494,470,494,470" title="Created 5 issues" alt=""/>
+<area shape="poly" coords="489,450,488,452,486,450,488,449,489,450,489,450" title="Resolved 15 issues" alt=""/>
+<area shape="poly" coords="489,456,488,457,486,456,488,454,489,456,489,456" title="Created 12 issues" alt=""/>
+<area shape="poly" coords="485,476,484,477,482,476,484,474,485,476,485,476" title="Resolved 2 issues" alt=""/>
+<area shape="poly" coords="485,460,484,461,482,460,484,458,485,460,485,460" title="Created 10 issues" alt=""/>
+<area shape="poly" coords="481,468,480,469,478,468,480,466,481,468,481,468" title="Resolved 6 issues" alt=""/>
+<area shape="poly" coords="481,468,480,469,478,468,480,466,481,468,481,468" title="Created 6 issues" alt=""/>
+<area shape="poly" coords="477,450,476,452,474,450,476,449,477,450,477,450" title="Resolved 15 issues" alt=""/>
+<area shape="poly" coords="477,452,476,454,474,452,476,451,477,452,477,452" title="Created 14 issues" alt=""/>
+<area shape="poly" coords="473,480,472,481,470,480,472,478,473,480,473,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="473,480,472,481,470,480,472,478,473,480,473,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="469,480,468,481,466,480,468,478,469,480,469,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="469,478,468,479,466,478,468,476,469,478,469,478" title="Created 1 issues" alt=""/>
+<area shape="poly" coords="465,472,464,473,462,472,464,470,465,472,465,472" title="Resolved 4 issues" alt=""/>
+<area shape="poly" coords="465,458,464,459,462,458,464,456,465,458,465,458" title="Created 11 issues" alt=""/>
+<area shape="poly" coords="461,480,459,481,458,480,459,478,461,480,461,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="461,480,459,481,458,480,459,478,461,480,461,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="457,462,455,463,454,462,455,460,457,462,457,462" title="Resolved 9 issues" alt=""/>
+<area shape="poly" coords="457,474,455,475,454,474,455,472,457,474,457,474" title="Created 3 issues" alt=""/>
+<area shape="poly" coords="453,446,451,448,450,446,451,445,453,446,453,446" title="Resolved 17 issues" alt=""/>
+<area shape="poly" coords="453,454,451,455,450,454,451,452,453,454,453,454" title="Created 13 issues" alt=""/>
+<area shape="poly" coords="449,458,447,459,446,458,447,456,449,458,449,458" title="Resolved 11 issues" alt=""/>
+<area shape="poly" coords="449,446,447,448,446,446,447,445,449,446,449,446" title="Created 17 issues" alt=""/>
+<area shape="poly" coords="445,480,443,481,442,480,443,478,445,480,445,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="445,480,443,481,442,480,443,478,445,480,445,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="441,480,439,481,438,480,439,478,441,480,441,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="441,472,439,473,438,472,439,470,441,472,441,472" title="Created 4 issues" alt=""/>
+<area shape="poly" coords="437,472,435,473,434,472,435,470,437,472,437,472" title="Resolved 4 issues" alt=""/>
+<area shape="poly" coords="437,478,435,479,434,478,435,476,437,478,437,478" title="Created 1 issues" alt=""/>
+<area shape="poly" coords="432,480,431,481,429,480,431,478,432,480,432,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="432,480,431,481,429,480,431,478,432,480,432,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="428,474,427,475,425,474,427,472,428,474,428,474" title="Resolved 3 issues" alt=""/>
+<area shape="poly" coords="428,470,427,471,425,470,427,468,428,470,428,470" title="Created 5 issues" alt=""/>
+<area shape="poly" coords="424,456,423,457,421,456,423,454,424,456,424,456" title="Resolved 12 issues" alt=""/>
+<area shape="poly" coords="424,452,423,454,421,452,423,451,424,452,424,452" title="Created 14 issues" alt=""/>
+<area shape="poly" coords="420,470,419,471,417,470,419,468,420,470,420,470" title="Resolved 5 issues" alt=""/>
+<area shape="poly" coords="420,474,419,475,417,474,419,472,420,474,420,474" title="Created 3 issues" alt=""/>
+<area shape="poly" coords="416,480,415,481,413,480,415,478,416,480,416,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="416,480,415,481,413,480,415,478,416,480,416,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="412,476,411,477,409,476,411,474,412,476,412,476" title="Resolved 2 issues" alt=""/>
+<area shape="poly" coords="412,478,411,479,409,478,411,476,412,478,412,478" title="Created 1 issues" alt=""/>
+<area shape="poly" coords="408,450,407,452,405,450,407,449,408,450,408,450" title="Resolved 15 issues" alt=""/>
+<area shape="poly" coords="408,444,407,446,405,444,407,443,408,444,408,444" title="Created 18 issues" alt=""/>
+<area shape="poly" coords="404,456,402,457,401,456,402,454,404,456,404,456" title="Resolved 12 issues" alt=""/>
+<area shape="poly" coords="404,464,402,465,401,464,402,462,404,464,404,464" title="Created 8 issues" alt=""/>
+<area shape="poly" coords="400,448,398,450,397,448,398,447,400,448,400,448" title="Resolved 16 issues" alt=""/>
+<area shape="poly" coords="400,442,398,444,397,442,398,441,400,442,400,442" title="Created 19 issues" alt=""/>
+<area shape="poly" coords="396,464,394,465,393,464,394,462,396,464,396,464" title="Resolved 8 issues" alt=""/>
+<area shape="poly" coords="396,462,394,463,393,462,394,460,396,462,396,462" title="Created 9 issues" alt=""/>
+<area shape="poly" coords="392,249,390,251,389,249,390,248,392,249,392,249" title="Resolved 116 issues" alt=""/>
+<area shape="poly" coords="392,466,390,467,389,466,390,464,392,466,392,466" title="Created 7 issues" alt=""/>
+<area shape="poly" coords="388,416,386,418,385,416,386,415,388,416,388,416" title="Resolved 32 issues" alt=""/>
+<area shape="poly" coords="388,476,386,477,385,476,386,474,388,476,388,476" title="Created 2 issues" alt=""/>
+<area shape="poly" coords="384,426,382,428,381,426,382,425,384,426,384,426" title="Resolved 27 issues" alt=""/>
+<area shape="poly" coords="384,480,382,481,381,480,382,478,384,480,384,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="380,299,378,300,377,299,378,297,380,299,380,299" title="Resolved 91 issues" alt=""/>
+<area shape="poly" coords="380,466,378,467,377,466,378,464,380,466,380,466" title="Created 7 issues" alt=""/>
+<area shape="poly" coords="375,380,374,382,372,380,374,379,375,380,375,380" title="Resolved 50 issues" alt=""/>
+<area shape="poly" coords="375,458,374,459,372,458,374,456,375,458,375,458" title="Created 11 issues" alt=""/>
+<area shape="poly" coords="371,325,370,326,368,325,370,323,371,325,371,325" title="Resolved 78 issues" alt=""/>
+<area shape="poly" coords="371,442,370,444,368,442,370,441,371,442,371,442" title="Created 19 issues" alt=""/>
+<area shape="poly" coords="367,345,366,346,364,345,366,343,367,345,367,345" title="Resolved 68 issues" alt=""/>
+<area shape="poly" coords="367,402,366,404,364,402,366,401,367,402,367,402" title="Created 39 issues" alt=""/>
+<area shape="poly" coords="363,277,362,278,360,277,362,275,363,277,363,277" title="Resolved 102 issues" alt=""/>
+<area shape="poly" coords="363,400,362,402,360,400,362,399,363,400,363,400" title="Created 40 issues" alt=""/>
+<area shape="poly" coords="359,470,358,471,356,470,358,468,359,470,359,470" title="Resolved 5 issues" alt=""/>
+<area shape="poly" coords="359,478,358,479,356,478,358,476,359,478,359,478" title="Created 1 issues" alt=""/>
+<area shape="poly" coords="355,472,354,473,352,472,354,470,355,472,355,472" title="Resolved 4 issues" alt=""/>
+<area shape="poly" coords="355,480,354,481,352,480,354,478,355,480,355,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="351,448,350,450,348,448,350,447,351,448,351,448" title="Resolved 16 issues" alt=""/>
+<area shape="poly" coords="351,426,350,428,348,426,350,425,351,426,351,426" title="Created 27 issues" alt=""/>
+<area shape="poly" coords="347,376,345,378,344,376,345,375,347,376,347,376" title="Resolved 52 issues" alt=""/>
+<area shape="poly" coords="347,422,345,424,344,422,345,421,347,422,347,422" title="Created 29 issues" alt=""/>
+<area shape="poly" coords="343,438,341,440,340,438,341,437,343,438,343,438" title="Resolved 21 issues" alt=""/>
+<area shape="poly" coords="343,464,341,465,340,464,341,462,343,464,343,464" title="Created 8 issues" alt=""/>
+<area shape="poly" coords="339,468,337,469,336,468,337,466,339,468,339,468" title="Resolved 6 issues" alt=""/>
+<area shape="poly" coords="339,438,337,440,336,438,337,437,339,438,339,438" title="Created 21 issues" alt=""/>
+<area shape="poly" coords="335,476,333,477,332,476,333,474,335,476,335,476" title="Resolved 2 issues" alt=""/>
+<area shape="poly" coords="335,462,333,463,332,462,333,460,335,462,335,462" title="Created 9 issues" alt=""/>
+<area shape="poly" coords="331,480,329,481,328,480,329,478,331,480,331,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="331,480,329,481,328,480,329,478,331,480,331,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="327,480,325,481,324,480,325,478,327,480,327,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="327,480,325,481,324,480,325,478,327,480,327,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="323,478,321,479,320,478,321,476,323,478,323,478" title="Resolved 1 issues" alt=""/>
+<area shape="poly" coords="323,476,321,477,320,476,321,474,323,476,323,476" title="Created 2 issues" alt=""/>
+<area shape="poly" coords="318,480,317,481,315,480,317,478,318,480,318,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="318,480,317,481,315,480,317,478,318,480,318,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="314,476,313,477,311,476,313,474,314,476,314,476" title="Resolved 2 issues" alt=""/>
+<area shape="poly" coords="314,474,313,475,311,474,313,472,314,474,314,474" title="Created 3 issues" alt=""/>
+<area shape="poly" coords="310,462,309,463,307,462,309,460,310,462,310,462" title="Resolved 9 issues" alt=""/>
+<area shape="poly" coords="310,460,309,461,307,460,309,458,310,460,310,460" title="Created 10 issues" alt=""/>
+<area shape="poly" coords="306,390,305,392,303,390,305,389,306,390,306,390" title="Resolved 45 issues" alt=""/>
+<area shape="poly" coords="306,466,305,467,303,466,305,464,306,466,306,466" title="Created 7 issues" alt=""/>
+<area shape="poly" coords="302,480,301,481,299,480,301,478,302,480,302,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="302,480,301,481,299,480,301,478,302,480,302,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="298,480,297,481,295,480,297,478,298,480,298,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="298,480,297,481,295,480,297,478,298,480,298,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="294,456,293,457,291,456,293,454,294,456,294,456" title="Resolved 12 issues" alt=""/>
+<area shape="poly" coords="294,450,293,452,291,450,293,449,294,450,294,450" title="Created 15 issues" alt=""/>
+<area shape="poly" coords="290,430,288,432,287,430,288,429,290,430,290,430" title="Resolved 25 issues" alt=""/>
+<area shape="poly" coords="290,424,288,426,287,424,288,423,290,424,290,424" title="Created 28 issues" alt=""/>
+<area shape="poly" coords="286,414,284,416,283,414,284,413,286,414,286,414" title="Resolved 33 issues" alt=""/>
+<area shape="poly" coords="286,410,284,412,283,410,284,409,286,410,286,410" title="Created 35 issues" alt=""/>
+<area shape="poly" coords="282,444,280,446,279,444,280,443,282,444,282,444" title="Resolved 18 issues" alt=""/>
+<area shape="poly" coords="282,420,280,422,279,420,280,419,282,420,282,420" title="Created 30 issues" alt=""/>
+<area shape="poly" coords="278,444,276,446,275,444,276,443,278,444,278,444" title="Resolved 18 issues" alt=""/>
+<area shape="poly" coords="278,452,276,454,275,452,276,451,278,452,278,452" title="Created 14 issues" alt=""/>
+<area shape="poly" coords="274,480,272,481,271,480,272,478,274,480,274,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="274,480,272,481,271,480,272,478,274,480,274,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="270,480,268,481,267,480,268,478,270,480,270,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="270,480,268,481,267,480,268,478,270,480,270,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="266,468,264,469,263,468,264,466,266,468,266,468" title="Resolved 6 issues" alt=""/>
+<area shape="poly" coords="266,440,264,442,263,440,264,439,266,440,266,440" title="Created 20 issues" alt=""/>
+<area shape="poly" coords="261,388,260,390,258,388,260,387,261,388,261,388" title="Resolved 46 issues" alt=""/>
+<area shape="poly" coords="261,452,260,454,258,452,260,451,261,452,261,452" title="Created 14 issues" alt=""/>
+<area shape="poly" coords="257,444,256,446,254,444,256,443,257,444,257,444" title="Resolved 18 issues" alt=""/>
+<area shape="poly" coords="257,436,256,438,254,436,256,435,257,436,257,436" title="Created 22 issues" alt=""/>
+<area shape="poly" coords="253,460,252,461,250,460,252,458,253,460,253,460" title="Resolved 10 issues" alt=""/>
+<area shape="poly" coords="253,444,252,446,250,444,252,443,253,444,253,444" title="Created 18 issues" alt=""/>
+<area shape="poly" coords="249,392,248,394,246,392,248,391,249,392,249,392" title="Resolved 44 issues" alt=""/>
+<area shape="poly" coords="249,454,248,455,246,454,248,452,249,454,249,454" title="Created 13 issues" alt=""/>
+<area shape="poly" coords="245,478,244,479,242,478,244,476,245,478,245,478" title="Resolved 1 issues" alt=""/>
+<area shape="poly" coords="245,480,244,481,242,480,244,478,245,480,245,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="241,480,240,481,238,480,240,478,241,480,241,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="241,480,240,481,238,480,240,478,241,480,241,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="237,476,236,477,234,476,236,474,237,476,237,476" title="Resolved 2 issues" alt=""/>
+<area shape="poly" coords="237,444,236,446,234,444,236,443,237,444,237,444" title="Created 18 issues" alt=""/>
+<area shape="poly" coords="233,456,231,457,230,456,231,454,233,456,233,456" title="Resolved 12 issues" alt=""/>
+<area shape="poly" coords="233,464,231,465,230,464,231,462,233,464,233,464" title="Created 8 issues" alt=""/>
+<area shape="poly" coords="229,474,227,475,226,474,227,472,229,474,229,474" title="Resolved 3 issues" alt=""/>
+<area shape="poly" coords="229,466,227,467,226,466,227,464,229,466,229,466" title="Created 7 issues" alt=""/>
+<area shape="poly" coords="225,448,223,450,222,448,223,447,225,448,225,448" title="Resolved 16 issues" alt=""/>
+<area shape="poly" coords="225,470,223,471,222,470,223,468,225,470,225,470" title="Created 5 issues" alt=""/>
+<area shape="poly" coords="221,470,219,471,218,470,219,468,221,470,221,470" title="Resolved 5 issues" alt=""/>
+<area shape="poly" coords="221,454,219,455,218,454,219,452,221,454,221,454" title="Created 13 issues" alt=""/>
+<area shape="poly" coords="217,480,215,481,214,480,215,478,217,480,217,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="217,480,215,481,214,480,215,478,217,480,217,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="212,480,211,481,209,480,211,478,212,480,212,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="212,480,211,481,209,480,211,478,212,480,212,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="208,480,207,481,205,480,207,478,208,480,208,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="208,468,207,469,205,468,207,466,208,468,208,468" title="Created 6 issues" alt=""/>
+<area shape="poly" coords="204,436,203,438,201,436,203,435,204,436,204,436" title="Resolved 22 issues" alt=""/>
+<area shape="poly" coords="204,446,203,448,201,446,203,445,204,446,204,446" title="Created 17 issues" alt=""/>
+<area shape="poly" coords="200,396,199,398,197,396,199,395,200,396,200,396" title="Resolved 42 issues" alt=""/>
+<area shape="poly" coords="200,410,199,412,197,410,199,409,200,410,200,410" title="Created 35 issues" alt=""/>
+<area shape="poly" coords="196,430,195,432,193,430,195,429,196,430,196,430" title="Resolved 25 issues" alt=""/>
+<area shape="poly" coords="196,438,195,440,193,438,195,437,196,438,196,438" title="Created 21 issues" alt=""/>
+<area shape="poly" coords="192,412,191,414,189,412,191,411,192,412,192,412" title="Resolved 34 issues" alt=""/>
+<area shape="poly" coords="192,416,191,418,189,416,191,415,192,416,192,416" title="Created 32 issues" alt=""/>
+<area shape="poly" coords="188,464,187,465,185,464,187,462,188,464,188,464" title="Resolved 8 issues" alt=""/>
+<area shape="poly" coords="188,422,187,424,185,422,187,421,188,422,188,422" title="Created 29 issues" alt=""/>
+<area shape="poly" coords="184,470,182,471,181,470,182,468,184,470,184,470" title="Resolved 5 issues" alt=""/>
+<area shape="poly" coords="184,440,182,442,181,440,182,439,184,440,184,440" title="Created 20 issues" alt=""/>
+<area shape="poly" coords="180,454,178,455,177,454,178,452,180,454,180,454" title="Resolved 13 issues" alt=""/>
+<area shape="poly" coords="180,392,178,394,177,392,178,391,180,392,180,392" title="Created 44 issues" alt=""/>
+<area shape="poly" coords="176,366,174,368,173,366,174,365,176,366,176,366" title="Resolved 57 issues" alt=""/>
+<area shape="poly" coords="176,430,174,432,173,430,174,429,176,430,176,430" title="Created 25 issues" alt=""/>
+<area shape="poly" coords="172,468,170,469,169,468,170,466,172,468,172,468" title="Resolved 6 issues" alt=""/>
+<area shape="poly" coords="172,460,170,461,169,460,170,458,172,460,172,460" title="Created 10 issues" alt=""/>
+<area shape="poly" coords="168,458,166,459,165,458,166,456,168,458,168,458" title="Resolved 11 issues" alt=""/>
+<area shape="poly" coords="168,470,166,471,165,470,166,468,168,470,168,470" title="Created 5 issues" alt=""/>
+<area shape="poly" coords="164,474,162,475,161,474,162,472,164,474,164,474" title="Resolved 3 issues" alt=""/>
+<area shape="poly" coords="164,410,162,412,161,410,162,409,164,410,164,410" title="Created 35 issues" alt=""/>
+<area shape="poly" coords="160,480,158,481,157,480,158,478,160,480,160,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="160,480,158,481,157,480,158,478,160,480,160,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="155,480,154,481,152,480,154,478,155,480,155,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="155,480,154,481,152,480,154,478,155,480,155,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="151,468,150,469,148,468,150,466,151,468,151,468" title="Resolved 6 issues" alt=""/>
+<area shape="poly" coords="151,462,150,463,148,462,150,460,151,462,151,462" title="Created 9 issues" alt=""/>
+<area shape="poly" coords="147,454,146,455,144,454,146,452,147,454,147,454" title="Resolved 13 issues" alt=""/>
+<area shape="poly" coords="147,452,146,454,144,452,146,451,147,452,147,452" title="Created 14 issues" alt=""/>
+<area shape="poly" coords="143,442,142,444,140,442,142,441,143,442,143,442" title="Resolved 19 issues" alt=""/>
+<area shape="poly" coords="143,436,142,438,140,436,142,435,143,436,143,436" title="Created 22 issues" alt=""/>
+<area shape="poly" coords="139,454,138,455,136,454,138,452,139,454,139,454" title="Resolved 13 issues" alt=""/>
+<area shape="poly" coords="139,448,138,450,136,448,138,447,139,448,139,448" title="Created 16 issues" alt=""/>
+<area shape="poly" coords="135,408,134,410,132,408,134,407,135,408,135,408" title="Resolved 36 issues" alt=""/>
+<area shape="poly" coords="135,26,134,28,132,26,134,25,135,26,135,26" title="Created 228 issues" alt=""/>
+<area shape="poly" coords="131,480,130,481,128,480,130,478,131,480,131,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="131,480,130,481,128,480,130,478,131,480,131,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="127,480,125,481,124,480,125,478,127,480,127,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="127,480,125,481,124,480,125,478,127,480,127,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="123,464,121,465,120,464,121,462,123,464,123,464" title="Resolved 8 issues" alt=""/>
+<area shape="poly" coords="123,470,121,471,120,470,121,468,123,470,123,470" title="Created 5 issues" alt=""/>
+<area shape="poly" coords="119,466,117,467,116,466,117,464,119,466,119,466" title="Resolved 7 issues" alt=""/>
+<area shape="poly" coords="119,458,117,459,116,458,117,456,119,458,119,458" title="Created 11 issues" alt=""/>
+<area shape="poly" coords="115,468,113,469,112,468,113,466,115,468,115,468" title="Resolved 6 issues" alt=""/>
+<area shape="poly" coords="115,472,113,473,112,472,113,470,115,472,115,472" title="Created 4 issues" alt=""/>
+<area shape="poly" coords="111,466,109,467,108,466,109,464,111,466,111,466" title="Resolved 7 issues" alt=""/>
+<area shape="poly" coords="111,448,109,450,108,448,109,447,111,448,111,448" title="Created 16 issues" alt=""/>
+<area shape="poly" coords="107,446,105,448,104,446,105,445,107,446,107,446" title="Resolved 17 issues" alt=""/>
+<area shape="poly" coords="107,418,105,420,104,418,105,417,107,418,107,418" title="Created 31 issues" alt=""/>
+<area shape="poly" coords="103,478,101,479,100,478,101,476,103,478,103,478" title="Resolved 1 issues" alt=""/>
+<area shape="poly" coords="103,472,101,473,100,472,101,470,103,472,103,472" title="Created 4 issues" alt=""/>
+<area shape="poly" coords="98,480,97,481,95,480,97,478,98,480,98,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="98,480,97,481,95,480,97,478,98,480,98,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="94,444,93,446,91,444,93,443,94,444,94,444" title="Resolved 18 issues" alt=""/>
+<area shape="poly" coords="94,446,93,448,91,446,93,445,94,446,94,446" title="Created 17 issues" alt=""/>
+<area shape="poly" coords="90,376,89,378,87,376,89,375,90,376,90,376" title="Resolved 52 issues" alt=""/>
+<area shape="poly" coords="90,440,89,442,87,440,89,439,90,440,90,440" title="Created 20 issues" alt=""/>
+<area shape="poly" coords="86,448,85,450,83,448,85,447,86,448,86,448" title="Resolved 16 issues" alt=""/>
+<area shape="poly" coords="86,438,85,440,83,438,85,437,86,438,86,438" title="Created 21 issues" alt=""/>
+<area shape="poly" coords="82,466,81,467,79,466,81,464,82,466,82,466" title="Resolved 7 issues" alt=""/>
+<area shape="poly" coords="82,394,81,396,79,394,81,393,82,394,82,394" title="Created 43 issues" alt=""/>
+<area shape="poly" coords="78,456,77,457,75,456,77,454,78,456,78,456" title="Resolved 12 issues" alt=""/>
+<area shape="poly" coords="78,448,77,450,75,448,77,447,78,448,78,448" title="Created 16 issues" alt=""/>
+<area shape="poly" coords="74,480,73,481,71,480,73,478,74,480,74,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="74,480,73,481,71,480,73,478,74,480,74,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="70,480,68,481,67,480,68,478,70,480,70,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="70,480,68,481,67,480,68,478,70,480,70,480" title="Created 0 issues" alt=""/>
+<area shape="poly" coords="66,470,64,471,63,470,64,468,66,470,66,470" title="Resolved 5 issues" alt=""/>
+<area shape="poly" coords="66,468,64,469,63,468,64,466,66,468,66,468" title="Created 6 issues" alt=""/>
+<area shape="poly" coords="62,468,60,469,59,468,60,466,62,468,62,468" title="Resolved 6 issues" alt=""/>
+<area shape="poly" coords="62,466,60,467,59,466,60,464,62,466,62,466" title="Created 7 issues" alt=""/>
+<area shape="poly" coords="58,480,56,481,55,480,56,478,58,480,58,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="58,450,56,452,55,450,56,449,58,450,58,450" title="Created 15 issues" alt=""/>
+<area shape="poly" coords="54,480,52,481,51,480,52,478,54,480,54,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="54,464,52,465,51,464,52,462,54,464,54,464" title="Created 8 issues" alt=""/>
+<area shape="poly" coords="50,480,48,481,47,480,48,478,50,480,50,480" title="Resolved 0 issues" alt=""/>
+<area shape="poly" coords="50,478,48,479,47,478,48,476,50,478,50,478" title="Created 1 issues" alt=""/>
+</map>
+                                <center>
+                    <img src='/jira/charts?filename=jfreechart-onetime-65674.png' border='0'  usemap="\#chart-J0dVQ" />
+                </center>
+                <br>
+                    </td>
+    </tr>
+        <tr>
+        <th class="subHeading">
+            <a name="dataTable"></a>
+            <h3 class="bluetext">Data Table</h3>
+        </th>
+    </tr>
+    <tr>
+        <td align="center">
+            <table class="grid" id="createdvsresolved-report-datatable">
+                <tr>
+                    <th>Period</th>
+                                        <th>
+                        Created
+                    </th>
+                                        <th>
+                        Resolved
+                    </th>
+                                    </tr>
+                                                <tr>
+                    <th>22-September-2008</th>
+                                            
+                        <td>
+                            1                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>23-September-2008</th>
+                                            
+                        <td>
+                            8                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>24-September-2008</th>
+                                            
+                        <td>
+                            15                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>25-September-2008</th>
+                                            
+                        <td>
+                            7                        </td>
+                                            
+                        <td>
+                            6                        </td>
+                                    </tr>
+                                <tr>
+                    <th>26-September-2008</th>
+                                            
+                        <td>
+                            6                        </td>
+                                            
+                        <td>
+                            5                        </td>
+                                    </tr>
+                                <tr>
+                    <th>27-September-2008</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>28-September-2008</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>29-September-2008</th>
+                                            
+                        <td>
+                            16                        </td>
+                                            
+                        <td>
+                            12                        </td>
+                                    </tr>
+                                <tr>
+                    <th>30-September-2008</th>
+                                            
+                        <td>
+                            43                        </td>
+                                            
+                        <td>
+                            7                        </td>
+                                    </tr>
+                                <tr>
+                    <th>1-October-2008</th>
+                                            
+                        <td>
+                            21                        </td>
+                                            
+                        <td>
+                            16                        </td>
+                                    </tr>
+                                <tr>
+                    <th>2-October-2008</th>
+                                            
+                        <td>
+                            20                        </td>
+                                            
+                        <td>
+                            52                        </td>
+                                    </tr>
+                                <tr>
+                    <th>3-October-2008</th>
+                                            
+                        <td>
+                            17                        </td>
+                                            
+                        <td>
+                            18                        </td>
+                                    </tr>
+                                <tr>
+                    <th>4-October-2008</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>5-October-2008</th>
+                                            
+                        <td>
+                            4                        </td>
+                                            
+                        <td>
+                            1                        </td>
+                                    </tr>
+                                <tr>
+                    <th>6-October-2008</th>
+                                            
+                        <td>
+                            31                        </td>
+                                            
+                        <td>
+                            17                        </td>
+                                    </tr>
+                                <tr>
+                    <th>7-October-2008</th>
+                                            
+                        <td>
+                            16                        </td>
+                                            
+                        <td>
+                            7                        </td>
+                                    </tr>
+                                <tr>
+                    <th>8-October-2008</th>
+                                            
+                        <td>
+                            4                        </td>
+                                            
+                        <td>
+                            6                        </td>
+                                    </tr>
+                                <tr>
+                    <th>9-October-2008</th>
+                                            
+                        <td>
+                            11                        </td>
+                                            
+                        <td>
+                            7                        </td>
+                                    </tr>
+                                <tr>
+                    <th>10-October-2008</th>
+                                            
+                        <td>
+                            5                        </td>
+                                            
+                        <td>
+                            8                        </td>
+                                    </tr>
+                                <tr>
+                    <th>11-October-2008</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>12-October-2008</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>13-October-2008</th>
+                                            
+                        <td>
+                            228                        </td>
+                                            
+                        <td>
+                            36                        </td>
+                                    </tr>
+                                <tr>
+                    <th>14-October-2008</th>
+                                            
+                        <td>
+                            16                        </td>
+                                            
+                        <td>
+                            13                        </td>
+                                    </tr>
+                                <tr>
+                    <th>15-October-2008</th>
+                                            
+                        <td>
+                            22                        </td>
+                                            
+                        <td>
+                            19                        </td>
+                                    </tr>
+                                <tr>
+                    <th>16-October-2008</th>
+                                            
+                        <td>
+                            14                        </td>
+                                            
+                        <td>
+                            13                        </td>
+                                    </tr>
+                                <tr>
+                    <th>17-October-2008</th>
+                                            
+                        <td>
+                            9                        </td>
+                                            
+                        <td>
+                            6                        </td>
+                                    </tr>
+                                <tr>
+                    <th>18-October-2008</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>19-October-2008</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>20-October-2008</th>
+                                            
+                        <td>
+                            35                        </td>
+                                            
+                        <td>
+                            3                        </td>
+                                    </tr>
+                                <tr>
+                    <th>21-October-2008</th>
+                                            
+                        <td>
+                            5                        </td>
+                                            
+                        <td>
+                            11                        </td>
+                                    </tr>
+                                <tr>
+                    <th>22-October-2008</th>
+                                            
+                        <td>
+                            10                        </td>
+                                            
+                        <td>
+                            6                        </td>
+                                    </tr>
+                                <tr>
+                    <th>23-October-2008</th>
+                                            
+                        <td>
+                            25                        </td>
+                                            
+                        <td>
+                            57                        </td>
+                                    </tr>
+                                <tr>
+                    <th>24-October-2008</th>
+                                            
+                        <td>
+                            44                        </td>
+                                            
+                        <td>
+                            13                        </td>
+                                    </tr>
+                                <tr>
+                    <th>25-October-2008</th>
+                                            
+                        <td>
+                            20                        </td>
+                                            
+                        <td>
+                            5                        </td>
+                                    </tr>
+                                <tr>
+                    <th>26-October-2008</th>
+                                            
+                        <td>
+                            29                        </td>
+                                            
+                        <td>
+                            8                        </td>
+                                    </tr>
+                                <tr>
+                    <th>27-October-2008</th>
+                                            
+                        <td>
+                            32                        </td>
+                                            
+                        <td>
+                            34                        </td>
+                                    </tr>
+                                <tr>
+                    <th>28-October-2008</th>
+                                            
+                        <td>
+                            21                        </td>
+                                            
+                        <td>
+                            25                        </td>
+                                    </tr>
+                                <tr>
+                    <th>29-October-2008</th>
+                                            
+                        <td>
+                            35                        </td>
+                                            
+                        <td>
+                            42                        </td>
+                                    </tr>
+                                <tr>
+                    <th>30-October-2008</th>
+                                            
+                        <td>
+                            17                        </td>
+                                            
+                        <td>
+                            22                        </td>
+                                    </tr>
+                                <tr>
+                    <th>31-October-2008</th>
+                                            
+                        <td>
+                            6                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>1-November-2008</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>2-November-2008</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>3-November-2008</th>
+                                            
+                        <td>
+                            13                        </td>
+                                            
+                        <td>
+                            5                        </td>
+                                    </tr>
+                                <tr>
+                    <th>4-November-2008</th>
+                                            
+                        <td>
+                            5                        </td>
+                                            
+                        <td>
+                            16                        </td>
+                                    </tr>
+                                <tr>
+                    <th>5-November-2008</th>
+                                            
+                        <td>
+                            7                        </td>
+                                            
+                        <td>
+                            3                        </td>
+                                    </tr>
+                                <tr>
+                    <th>6-November-2008</th>
+                                            
+                        <td>
+                            8                        </td>
+                                            
+                        <td>
+                            12                        </td>
+                                    </tr>
+                                <tr>
+                    <th>7-November-2008</th>
+                                            
+                        <td>
+                            18                        </td>
+                                            
+                        <td>
+                            2                        </td>
+                                    </tr>
+                                <tr>
+                    <th>8-November-2008</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>9-November-2008</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            1                        </td>
+                                    </tr>
+                                <tr>
+                    <th>10-November-2008</th>
+                                            
+                        <td>
+                            13                        </td>
+                                            
+                        <td>
+                            44                        </td>
+                                    </tr>
+                                <tr>
+                    <th>11-November-2008</th>
+                                            
+                        <td>
+                            18                        </td>
+                                            
+                        <td>
+                            10                        </td>
+                                    </tr>
+                                <tr>
+                    <th>12-November-2008</th>
+                                            
+                        <td>
+                            22                        </td>
+                                            
+                        <td>
+                            18                        </td>
+                                    </tr>
+                                <tr>
+                    <th>13-November-2008</th>
+                                            
+                        <td>
+                            14                        </td>
+                                            
+                        <td>
+                            46                        </td>
+                                    </tr>
+                                <tr>
+                    <th>14-November-2008</th>
+                                            
+                        <td>
+                            20                        </td>
+                                            
+                        <td>
+                            6                        </td>
+                                    </tr>
+                                <tr>
+                    <th>15-November-2008</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>16-November-2008</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>17-November-2008</th>
+                                            
+                        <td>
+                            14                        </td>
+                                            
+                        <td>
+                            18                        </td>
+                                    </tr>
+                                <tr>
+                    <th>18-November-2008</th>
+                                            
+                        <td>
+                            30                        </td>
+                                            
+                        <td>
+                            18                        </td>
+                                    </tr>
+                                <tr>
+                    <th>19-November-2008</th>
+                                            
+                        <td>
+                            35                        </td>
+                                            
+                        <td>
+                            33                        </td>
+                                    </tr>
+                                <tr>
+                    <th>20-November-2008</th>
+                                            
+                        <td>
+                            28                        </td>
+                                            
+                        <td>
+                            25                        </td>
+                                    </tr>
+                                <tr>
+                    <th>21-November-2008</th>
+                                            
+                        <td>
+                            15                        </td>
+                                            
+                        <td>
+                            12                        </td>
+                                    </tr>
+                                <tr>
+                    <th>22-November-2008</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>23-November-2008</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>24-November-2008</th>
+                                            
+                        <td>
+                            7                        </td>
+                                            
+                        <td>
+                            45                        </td>
+                                    </tr>
+                                <tr>
+                    <th>25-November-2008</th>
+                                            
+                        <td>
+                            10                        </td>
+                                            
+                        <td>
+                            9                        </td>
+                                    </tr>
+                                <tr>
+                    <th>26-November-2008</th>
+                                            
+                        <td>
+                            3                        </td>
+                                            
+                        <td>
+                            2                        </td>
+                                    </tr>
+                                <tr>
+                    <th>27-November-2008</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>28-November-2008</th>
+                                            
+                        <td>
+                            2                        </td>
+                                            
+                        <td>
+                            1                        </td>
+                                    </tr>
+                                <tr>
+                    <th>29-November-2008</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>30-November-2008</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>1-December-2008</th>
+                                            
+                        <td>
+                            9                        </td>
+                                            
+                        <td>
+                            2                        </td>
+                                    </tr>
+                                <tr>
+                    <th>2-December-2008</th>
+                                            
+                        <td>
+                            21                        </td>
+                                            
+                        <td>
+                            6                        </td>
+                                    </tr>
+                                <tr>
+                    <th>3-December-2008</th>
+                                            
+                        <td>
+                            8                        </td>
+                                            
+                        <td>
+                            21                        </td>
+                                    </tr>
+                                <tr>
+                    <th>4-December-2008</th>
+                                            
+                        <td>
+                            29                        </td>
+                                            
+                        <td>
+                            52                        </td>
+                                    </tr>
+                                <tr>
+                    <th>5-December-2008</th>
+                                            
+                        <td>
+                            27                        </td>
+                                            
+                        <td>
+                            16                        </td>
+                                    </tr>
+                                <tr>
+                    <th>6-December-2008</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            4                        </td>
+                                    </tr>
+                                <tr>
+                    <th>7-December-2008</th>
+                                            
+                        <td>
+                            1                        </td>
+                                            
+                        <td>
+                            5                        </td>
+                                    </tr>
+                                <tr>
+                    <th>8-December-2008</th>
+                                            
+                        <td>
+                            40                        </td>
+                                            
+                        <td>
+                            102                        </td>
+                                    </tr>
+                                <tr>
+                    <th>9-December-2008</th>
+                                            
+                        <td>
+                            39                        </td>
+                                            
+                        <td>
+                            68                        </td>
+                                    </tr>
+                                <tr>
+                    <th>10-December-2008</th>
+                                            
+                        <td>
+                            19                        </td>
+                                            
+                        <td>
+                            78                        </td>
+                                    </tr>
+                                <tr>
+                    <th>11-December-2008</th>
+                                            
+                        <td>
+                            11                        </td>
+                                            
+                        <td>
+                            50                        </td>
+                                    </tr>
+                                <tr>
+                    <th>12-December-2008</th>
+                                            
+                        <td>
+                            7                        </td>
+                                            
+                        <td>
+                            91                        </td>
+                                    </tr>
+                                <tr>
+                    <th>13-December-2008</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            27                        </td>
+                                    </tr>
+                                <tr>
+                    <th>14-December-2008</th>
+                                            
+                        <td>
+                            2                        </td>
+                                            
+                        <td>
+                            32                        </td>
+                                    </tr>
+                                <tr>
+                    <th>15-December-2008</th>
+                                            
+                        <td>
+                            7                        </td>
+                                            
+                        <td>
+                            116                        </td>
+                                    </tr>
+                                <tr>
+                    <th>16-December-2008</th>
+                                            
+                        <td>
+                            9                        </td>
+                                            
+                        <td>
+                            8                        </td>
+                                    </tr>
+                                <tr>
+                    <th>17-December-2008</th>
+                                            
+                        <td>
+                            19                        </td>
+                                            
+                        <td>
+                            16                        </td>
+                                    </tr>
+                                <tr>
+                    <th>18-December-2008</th>
+                                            
+                        <td>
+                            8                        </td>
+                                            
+                        <td>
+                            12                        </td>
+                                    </tr>
+                                <tr>
+                    <th>19-December-2008</th>
+                                            
+                        <td>
+                            18                        </td>
+                                            
+                        <td>
+                            15                        </td>
+                                    </tr>
+                                <tr>
+                    <th>20-December-2008</th>
+                                            
+                        <td>
+                            1                        </td>
+                                            
+                        <td>
+                            2                        </td>
+                                    </tr>
+                                <tr>
+                    <th>21-December-2008</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>22-December-2008</th>
+                                            
+                        <td>
+                            3                        </td>
+                                            
+                        <td>
+                            5                        </td>
+                                    </tr>
+                                <tr>
+                    <th>23-December-2008</th>
+                                            
+                        <td>
+                            14                        </td>
+                                            
+                        <td>
+                            12                        </td>
+                                    </tr>
+                                <tr>
+                    <th>24-December-2008</th>
+                                            
+                        <td>
+                            5                        </td>
+                                            
+                        <td>
+                            3                        </td>
+                                    </tr>
+                                <tr>
+                    <th>25-December-2008</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>26-December-2008</th>
+                                            
+                        <td>
+                            1                        </td>
+                                            
+                        <td>
+                            4                        </td>
+                                    </tr>
+                                <tr>
+                    <th>27-December-2008</th>
+                                            
+                        <td>
+                            4                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>28-December-2008</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>29-December-2008</th>
+                                            
+                        <td>
+                            17                        </td>
+                                            
+                        <td>
+                            11                        </td>
+                                    </tr>
+                                <tr>
+                    <th>30-December-2008</th>
+                                            
+                        <td>
+                            13                        </td>
+                                            
+                        <td>
+                            17                        </td>
+                                    </tr>
+                                <tr>
+                    <th>31-December-2008</th>
+                                            
+                        <td>
+                            3                        </td>
+                                            
+                        <td>
+                            9                        </td>
+                                    </tr>
+                                <tr>
+                    <th>1-January-2009</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>2-January-2009</th>
+                                            
+                        <td>
+                            11                        </td>
+                                            
+                        <td>
+                            4                        </td>
+                                    </tr>
+                                <tr>
+                    <th>3-January-2009</th>
+                                            
+                        <td>
+                            1                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>4-January-2009</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>5-January-2009</th>
+                                            
+                        <td>
+                            14                        </td>
+                                            
+                        <td>
+                            15                        </td>
+                                    </tr>
+                                <tr>
+                    <th>6-January-2009</th>
+                                            
+                        <td>
+                            6                        </td>
+                                            
+                        <td>
+                            6                        </td>
+                                    </tr>
+                                <tr>
+                    <th>7-January-2009</th>
+                                            
+                        <td>
+                            10                        </td>
+                                            
+                        <td>
+                            2                        </td>
+                                    </tr>
+                                <tr>
+                    <th>8-January-2009</th>
+                                            
+                        <td>
+                            12                        </td>
+                                            
+                        <td>
+                            15                        </td>
+                                    </tr>
+                                <tr>
+                    <th>9-January-2009</th>
+                                            
+                        <td>
+                            5                        </td>
+                                            
+                        <td>
+                            10                        </td>
+                                    </tr>
+                                <tr>
+                    <th>10-January-2009</th>
+                                            
+                        <td>
+                            2                        </td>
+                                            
+                        <td>
+                            1                        </td>
+                                    </tr>
+                                <tr>
+                    <th>11-January-2009</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>12-January-2009</th>
+                                            
+                        <td>
+                            18                        </td>
+                                            
+                        <td>
+                            25                        </td>
+                                    </tr>
+                                <tr>
+                    <th>13-January-2009</th>
+                                            
+                        <td>
+                            13                        </td>
+                                            
+                        <td>
+                            18                        </td>
+                                    </tr>
+                                <tr>
+                    <th>14-January-2009</th>
+                                            
+                        <td>
+                            11                        </td>
+                                            
+                        <td>
+                            20                        </td>
+                                    </tr>
+                                <tr>
+                    <th>15-January-2009</th>
+                                            
+                        <td>
+                            5                        </td>
+                                            
+                        <td>
+                            27                        </td>
+                                    </tr>
+                                <tr>
+                    <th>16-January-2009</th>
+                                            
+                        <td>
+                            8                        </td>
+                                            
+                        <td>
+                            3                        </td>
+                                    </tr>
+                                <tr>
+                    <th>17-January-2009</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>18-January-2009</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>19-January-2009</th>
+                                            
+                        <td>
+                            9                        </td>
+                                            
+                        <td>
+                            14                        </td>
+                                    </tr>
+                                <tr>
+                    <th>20-January-2009</th>
+                                            
+                        <td>
+                            9                        </td>
+                                            
+                        <td>
+                            9                        </td>
+                                    </tr>
+                                <tr>
+                    <th>21-January-2009</th>
+                                            
+                        <td>
+                            10                        </td>
+                                            
+                        <td>
+                            13                        </td>
+                                    </tr>
+                                <tr>
+                    <th>22-January-2009</th>
+                                            
+                        <td>
+                            9                        </td>
+                                            
+                        <td>
+                            6                        </td>
+                                    </tr>
+                                <tr>
+                    <th>23-January-2009</th>
+                                            
+                        <td>
+                            23                        </td>
+                                            
+                        <td>
+                            16                        </td>
+                                    </tr>
+                                <tr>
+                    <th>24-January-2009</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>25-January-2009</th>
+                                            
+                        <td>
+                            1                        </td>
+                                            
+                        <td>
+                            1                        </td>
+                                    </tr>
+                                <tr>
+                    <th>26-January-2009</th>
+                                            
+                        <td>
+                            20                        </td>
+                                            
+                        <td>
+                            13                        </td>
+                                    </tr>
+                                <tr>
+                    <th>27-January-2009</th>
+                                            
+                        <td>
+                            14                        </td>
+                                            
+                        <td>
+                            17                        </td>
+                                    </tr>
+                                <tr>
+                    <th>28-January-2009</th>
+                                            
+                        <td>
+                            34                        </td>
+                                            
+                        <td>
+                            31                        </td>
+                                    </tr>
+                                <tr>
+                    <th>29-January-2009</th>
+                                            
+                        <td>
+                            16                        </td>
+                                            
+                        <td>
+                            25                        </td>
+                                    </tr>
+                                <tr>
+                    <th>30-January-2009</th>
+                                            
+                        <td>
+                            10                        </td>
+                                            
+                        <td>
+                            8                        </td>
+                                    </tr>
+                                <tr>
+                    <th>31-January-2009</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>1-February-2009</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>2-February-2009</th>
+                                            
+                        <td>
+                            5                        </td>
+                                            
+                        <td>
+                            3                        </td>
+                                    </tr>
+                                <tr>
+                    <th>3-February-2009</th>
+                                            
+                        <td>
+                            8                        </td>
+                                            
+                        <td>
+                            6                        </td>
+                                    </tr>
+                                <tr>
+                    <th>4-February-2009</th>
+                                            
+                        <td>
+                            14                        </td>
+                                            
+                        <td>
+                            9                        </td>
+                                    </tr>
+                                <tr>
+                    <th>5-February-2009</th>
+                                            
+                        <td>
+                            18                        </td>
+                                            
+                        <td>
+                            15                        </td>
+                                    </tr>
+                                <tr>
+                    <th>6-February-2009</th>
+                                            
+                        <td>
+                            7                        </td>
+                                            
+                        <td>
+                            5                        </td>
+                                    </tr>
+                                <tr>
+                    <th>7-February-2009</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>8-February-2009</th>
+                                            
+                        <td>
+                            1                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>9-February-2009</th>
+                                            
+                        <td>
+                            9                        </td>
+                                            
+                        <td>
+                            5                        </td>
+                                    </tr>
+                                <tr>
+                    <th>10-February-2009</th>
+                                            
+                        <td>
+                            16                        </td>
+                                            
+                        <td>
+                            13                        </td>
+                                    </tr>
+                                <tr>
+                    <th>11-February-2009</th>
+                                            
+                        <td>
+                            6                        </td>
+                                            
+                        <td>
+                            11                        </td>
+                                    </tr>
+                                <tr>
+                    <th>12-February-2009</th>
+                                            
+                        <td>
+                            15                        </td>
+                                            
+                        <td>
+                            27                        </td>
+                                    </tr>
+                                <tr>
+                    <th>13-February-2009</th>
+                                            
+                        <td>
+                            3                        </td>
+                                            
+                        <td>
+                            8                        </td>
+                                    </tr>
+                                <tr>
+                    <th>14-February-2009</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>15-February-2009</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>16-February-2009</th>
+                                            
+                        <td>
+                            8                        </td>
+                                            
+                        <td>
+                            5                        </td>
+                                    </tr>
+                                <tr>
+                    <th>17-February-2009</th>
+                                            
+                        <td>
+                            10                        </td>
+                                            
+                        <td>
+                            20                        </td>
+                                    </tr>
+                                <tr>
+                    <th>18-February-2009</th>
+                                            
+                        <td>
+                            14                        </td>
+                                            
+                        <td>
+                            4                        </td>
+                                    </tr>
+                                <tr>
+                    <th>19-February-2009</th>
+                                            
+                        <td>
+                            21                        </td>
+                                            
+                        <td>
+                            10                        </td>
+                                    </tr>
+                                <tr>
+                    <th>20-February-2009</th>
+                                            
+                        <td>
+                            35                        </td>
+                                            
+                        <td>
+                            24                        </td>
+                                    </tr>
+                                <tr>
+                    <th>21-February-2009</th>
+                                            
+                        <td>
+                            31                        </td>
+                                            
+                        <td>
+                            5                        </td>
+                                    </tr>
+                                <tr>
+                    <th>22-February-2009</th>
+                                            
+                        <td>
+                            5                        </td>
+                                            
+                        <td>
+                            13                        </td>
+                                    </tr>
+                                <tr>
+                    <th>23-February-2009</th>
+                                            
+                        <td>
+                            34                        </td>
+                                            
+                        <td>
+                            18                        </td>
+                                    </tr>
+                                <tr>
+                    <th>24-February-2009</th>
+                                            
+                        <td>
+                            14                        </td>
+                                            
+                        <td>
+                            17                        </td>
+                                    </tr>
+                                <tr>
+                    <th>25-February-2009</th>
+                                            
+                        <td>
+                            36                        </td>
+                                            
+                        <td>
+                            48                        </td>
+                                    </tr>
+                                <tr>
+                    <th>26-February-2009</th>
+                                            
+                        <td>
+                            15                        </td>
+                                            
+                        <td>
+                            30                        </td>
+                                    </tr>
+                                <tr>
+                    <th>27-February-2009</th>
+                                            
+                        <td>
+                            20                        </td>
+                                            
+                        <td>
+                            4                        </td>
+                                    </tr>
+                                <tr>
+                    <th>28-February-2009</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>1-March-2009</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>2-March-2009</th>
+                                            
+                        <td>
+                            4                        </td>
+                                            
+                        <td>
+                            1                        </td>
+                                    </tr>
+                                <tr>
+                    <th>3-March-2009</th>
+                                            
+                        <td>
+                            2                        </td>
+                                            
+                        <td>
+                            1                        </td>
+                                    </tr>
+                                <tr>
+                    <th>4-March-2009</th>
+                                            
+                        <td>
+                            21                        </td>
+                                            
+                        <td>
+                            10                        </td>
+                                    </tr>
+                                <tr>
+                    <th>5-March-2009</th>
+                                            
+                        <td>
+                            3                        </td>
+                                            
+                        <td>
+                            6                        </td>
+                                    </tr>
+                                <tr>
+                    <th>6-March-2009</th>
+                                            
+                        <td>
+                            11                        </td>
+                                            
+                        <td>
+                            6                        </td>
+                                    </tr>
+                                <tr>
+                    <th>7-March-2009</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>8-March-2009</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>9-March-2009</th>
+                                            
+                        <td>
+                            9                        </td>
+                                            
+                        <td>
+                            2                        </td>
+                                    </tr>
+                                <tr>
+                    <th>10-March-2009</th>
+                                            
+                        <td>
+                            4                        </td>
+                                            
+                        <td>
+                            11                        </td>
+                                    </tr>
+                                <tr>
+                    <th>11-March-2009</th>
+                                            
+                        <td>
+                            16                        </td>
+                                            
+                        <td>
+                            22                        </td>
+                                    </tr>
+                                <tr>
+                    <th>12-March-2009</th>
+                                            
+                        <td>
+                            4                        </td>
+                                            
+                        <td>
+                            12                        </td>
+                                    </tr>
+                                <tr>
+                    <th>13-March-2009</th>
+                                            
+                        <td>
+                            9                        </td>
+                                            
+                        <td>
+                            12                        </td>
+                                    </tr>
+                                <tr>
+                    <th>14-March-2009</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>15-March-2009</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            0                        </td>
+                                    </tr>
+                                <tr>
+                    <th>16-March-2009</th>
+                                            
+                        <td>
+                            6                        </td>
+                                            
+                        <td>
+                            7                        </td>
+                                    </tr>
+                                <tr>
+                    <th>17-March-2009</th>
+                                            
+                        <td>
+                            12                        </td>
+                                            
+                        <td>
+                            8                        </td>
+                                    </tr>
+                                <tr>
+                    <th>18-March-2009</th>
+                                            
+                        <td>
+                            8                        </td>
+                                            
+                        <td>
+                            3                        </td>
+                                    </tr>
+                                <tr>
+                    <th>19-March-2009</th>
+                                            
+                        <td>
+                            5                        </td>
+                                            
+                        <td>
+                            2                        </td>
+                                    </tr>
+                                <tr>
+                    <th>20-March-2009</th>
+                                            
+                        <td>
+                            0                        </td>
+                                            
+                        <td>
+                            2                        </td>
+                                    </tr>
+                            </table>
+        </td>
+    </tr>
+    </table>
+    </td>
+    </tr>
+
+
+</table>
+</td></tr></table>
+
+
+
+
+
+
+
+
+
+    
+    <div class="footer">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                <td bgcolor="#bbbbbb"><img src="/jira/s/335/1/_/images/border/spacer.gif" height="1" width="100" border="0" alt=""></td>
+            </tr>
+                
+
+    
+    <tr>
+        <td height="12" style="background-image:url(/jira/s/335/1/_/images/border/border_bottom.gif)"><img src="/jira/s/335/1/_/images/border/spacer.gif" width="1" height="1" border="0" alt=""></td>
+    </tr>
+</table>
+
+<span  class="poweredbymessage" >
+    Powered by <a href="http://www.atlassian.com/software/jira" class="smalltext">Atlassian JIRA</a>
+    the Professional <a href="http://www.atlassian.com/software/jira">Issue Tracker</a>.
+    <span  style="color: #666666;" >(Enterprise Edition, Version: 3.13.2-#335)</span>    - <a href="http://jira.atlassian.com/default.jsp?clicked=footer">Bug/feature request</a>
+    - <a href="http://www.atlassian.com/about/connected.jsp?s_kwcid=jira-stayintouch">Atlassian news</a>
+    - <a href="/jira/secure/Administrators.jspa">Contact Administrators</a>
+</span>
+
+
+</div>
+    
+
+</body>
+</html>
+

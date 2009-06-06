@@ -1,0 +1,7 @@
+h1. TODO
+
+# Pull in some migration generator scripts
+# Clean up the code structure a bit
+## Move the top-level script into lib
+## Add gem spec
+# Add options to only run certain stats gatherers

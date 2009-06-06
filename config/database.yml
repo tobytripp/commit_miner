@@ -1,0 +1,11 @@
+development:
+  adapter:  sqlite3
+  database: <%= File.expand_path "~/.commit_stats/db/commit_data.sqlite3" %>
+  pool: 5
+  timeout: 5000
+
+test:
+  adapter:  sqlite3
+  database: ":memory:"
+  verbosity: silent
+  

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <link href="/dashboard/css/main.css" rel="stylesheet" type="text/css" /><!--[if lte IE 7]>
+      <link href="/dashboard/css/ie_hacks.css" rel="stylesheet" type="text/css"></link>
+  <![endif]-->
+    <link href="/dashboard/css/niftyCorners.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+//<![CDATA[
+        var contextPath = "/dashboard"
+        var global_force_build_enabled = true
+    //]]>
+    </script>
+    <script src="/dashboard/compressed/all.js" type="text/javascript">
+</script>
+    <link href="/dashboard/css/build_common.css" rel="stylesheet" title="Dashboard style sheet" type="text/css" />
+    <link href="/dashboard/css/builds_tab.css" rel="stylesheet" title="Dashboard style sheet" type="text/css" />
+    <link href="/dashboard/css/build_list.css" rel="stylesheet" title="Dashboard style sheet" type="text/css" />
+  </head>
+  <body>
+    <div id="doc3" class="yui-t7 all_builds">
+      <div id="header">
+        <div id="menu">
+          <div id="pageTitle">
+            Dashboard Server : cruise.me.com
+          </div>
+          <div id="logo">
+            <img src="/dashboard/images/logo.gif" alt="Cruise Control" width="195" height="42" />
+          </div>
+          <ul>
+            <li id="dashboard" class='dynamic_width round_top'>
+              <a href="/dashboard/tab/dashboard"><span>Dashboard</span></a>
+            </li>
+            <li id="builds" class='dynamic_width round_top currenttab'>
+              <a href="/dashboard/tab/builds"><span>Builds</span></a>
+            </li>
+            <li id="administation" class="dynamic_width round_top" style="float:right">
+              <a href="/dashboard/admin/config"><span>Administration</span></a>
+            </li>
+          </ul>
+        </div>
+        <div id="menu_bottom"></div>
+      </div>
+      <div id="content">
+        <div id="bd">
+          <div class="yui-ge">
+            <div class="yui-u first">
+              <div class="buildlist_header round_top">
+                <h1>project</h1>— All builds
+              </div>
+              <div id="container">
+                <div class="passed build_profile">
+                  <a class="block" href="/dashboard/tab/build/detail/project/20090106041635">2 months ago 3.32.38945</a> <a class="block" href="/dashboard/tab/build/download/log/project/log20090106041635L3.32.38945.xml">Download log</a>
+                </div>
+                <div class="failed build_profile">
+                  <a class="block" href="/dashboard/tab/build/detail/project/20090106033311">2 months ago</a> <a class="block" href="/dashboard/tab/build/download/log/project/log20090106033311.xml">Download log</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

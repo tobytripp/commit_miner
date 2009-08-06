@@ -22,14 +22,18 @@ module CommitStats
 
   CONFIG_PATH = [
     File.expand_path( "." ),
+    File.expand_path( "./config" ),
     File.expand_path( "~/" ),
     File.expand_path( "~/.commit_stats" ),
-    APP_ROOT
+    APP_ROOT,
+    "#{APP_ROOT}/config"
   ].detect do |path|
     File.file? File.join( path, "commit_stats.config.rb" )
   end
 
   unless ENV["APP_ENV"] == "test"
-    Config = Configurator.load File.read( File.join( CONFIG_PATH, "commit_stats.config.rb" ) )
+    puts "Loading configuration at #{CONFIG_PATH}/commit_stats.config.rb"
+    Config =
+      Configurator.load File.read( File.join( CONFIG_PATH, "commit_stats.config.rb" ) )
   end
 end

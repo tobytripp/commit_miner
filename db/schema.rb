@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 4) do
+ActiveRecord::Schema.define(:version => 5) do
 
   create_table "broken_builds", :force => true do |t|
     t.date     "date"
@@ -30,11 +30,12 @@ ActiveRecord::Schema.define(:version => 4) do
     t.text     "changeset",      :limit => 10000000
     t.datetime "date"
     t.string   "feature"
-    t.string   "pair"
+    t.string   "pair1"
     t.string   "message"
     t.string   "sha"
     t.integer  "svn_revision"
     t.integer  "testcase_count",                     :default => 0
+    t.string   "pair2"
   end
 
 end

@@ -5,9 +5,10 @@ module CommitStats
   describe Miner::Git do
     before :each do
       log = TEST_DATA
-      mock( git = Object.new ).log do
-        mock!.since( "2 months ago" ) { log }
+      mock( git = Object.new ).log( 100000 ) do
+        mock!.since( "2 years ago" ) { log }
       end
+      stub( git ).dir { stub( Object.new ).path {'.'} }
       
       mock( ::Git ).open( '.' ) { git }
       

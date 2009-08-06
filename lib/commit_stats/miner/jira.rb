@@ -27,6 +27,7 @@ module CommitStats
       end
   
       def generate_statistics
+        puts "Generating bug report from #{@report_url}…"
         agent = WWW::Mechanize.new
         page  = agent.get @report_url
 
@@ -37,6 +38,8 @@ module CommitStats
           BugCount.create :date => date, :bugs_created => created
         end
         self
+      rescue SocketError => e
+        puts "Problem loading '#{@report_url}'", e.message
       end
       alias_method :gather_statistics, :generate_statistics
   

@@ -11,6 +11,7 @@ module CommitStats
       end
   
       def generate_statistics
+        puts "Generating Cruise Build statistics from #{@url} for #{@project}"
         agent = WWW::Mechanize.new { |agent| agent.user_agent_alias = 'Mac Safari' }
 
         agent.get( "#{@url}/dashboard/project/list/all/#{@project}" ) do |page|

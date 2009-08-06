@@ -17,9 +17,9 @@ module CommitStats
 
     def initialize( options={} )
       @stats = options[:statistics] || [
-        Miner::Git.new,
-        Miner::Jira.new,
-        Miner::CruiseControl.new
+        Miner::Git.new(  Config.git_repo, options[:since_date] ),
+        Miner::Jira.new( Config.jira_url),
+        Miner::CruiseControl.new( Config.cruise_url, Config.cruise_project )
       ]
 
       options.keys.each do |option|

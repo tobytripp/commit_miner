@@ -10,6 +10,11 @@ module CommitStats
       sum 'testcase_count'
     end
   
+    def pair=( pair_data )
+      return if pair_data.nil?
+      self.pair1, self.pair2 = pair_data.split( /,|\/|\\/ )
+    end
+    
     def diff
       @diff ||= ""
     end
@@ -28,18 +33,19 @@ module CommitStats
     end
     
     def tested?
-      changeset.detect { |path| !(path =~ /vendor|lib/) && path =~ /_spec\.rb|[Tt]est\.java|test\.html/ }
+      changeset.detect { |path| !(path =~ /vendor|lib/) && path =~ /_spec\.rb|[Tt]est\.java|test\.html|_spec\.js/ }
     end
   
     def cowboy?
-      pair && pair.split(/[\/,]/).size == 1
+      !(pair1 && pair2)
     end
       
     def to_a
       [ date.strftime( "%Y,%m,%d" ), 
         date.strftime( "%H,%M,%S" ),
-        svn_rev,
-        pair,
+        svn_revision,
+        pair1,
+        pair2,
         author,
         cowboy?  ? '1' : '0',
         !tested? ? '1' : '0',
@@ -55,7 +61,7 @@ module CommitStats
     
     def update_testcase_count
       self.testcase_count = self.diff.inject(0) { |accumulator, line|
-        if line =~ /^\+\s*(it\s+['"]|def test|@Test)/  
+        if line =~ /^\+\s*(it\(?\s+['"]|def test|@Test)/  
           accumulator + 1
         else
           accumulator

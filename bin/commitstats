@@ -1,0 +1,73 @@
+#!/usr/bin/env ruby -KU
+
+# == Synopsis
+#   Gather statistics from git diff data, Jira reports, and Cruise Control
+#
+# == Usage
+#   commitstats [-h|--help] [-o|--output PATH] [-s|--since DATE]
+# 
+# PATH::
+#   The path to write the statistics data to.
+# DATE::
+#   Tell git to go back to DATE when gathering log data.
+# 
+#--
+# Copyright (c) 2009  Toby Tripp
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to
+# deal in the Software without restriction, including without limitation the
+# rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+# sell copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+# IN THE SOFTWARE.
+#++
+
+# For running in development
+if File.directory?( File.expand_path( File.dirname(__FILE__) + "/../lib" ) )
+  require "rubygems"
+  $LOAD_PATH << File.expand_path( File.dirname(__FILE__) + "/../lib" )
+end
+
+begin
+  require 'commit_stats'
+rescue LoadError
+  require "rubygems"
+  require "commit_stats"
+end
+
+require "rdoc/usage"
+require "optparse"
+
+if __FILE__ == $PROGRAM_NAME
+  since_date = "2008-12-01"
+  outfile    =
+    File.expand_path "~/Documents/Code/stats.#{Time.now.strftime('%d%b%Y')}.csv"
+  report_only = false
+
+  opts = OptionParser.new
+  opts.on( "-h", "--help" )        { RDoc::usage 1 }
+  opts.on( "-o", "--output PATH" ) { |path| outfile    = path }
+  opts.on( "-s", "--since  DATE" ) { |date| since_date = date}
+  opts.on( "-r", "--report-only" ) { report_only = true }
+  opts.parse!( ARGV ) rescue RDoc::usage( 'usage' )
+
+  report = CommitStats::Report.new(
+    :since_date  => since_date,
+    :output_path => outfile,
+    :report_only => report_only
+  )
+  
+  report.generate
+  puts report.tests_and_cowboys.to_csv
+end

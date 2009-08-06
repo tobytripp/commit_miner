@@ -10,7 +10,10 @@ module CommitStats
       stub( Miner::Git  ).new { @git }
       stub( Miner::CruiseControl ).new { @cruise }
       stub( Miner::Jira ).new { @jira }
-    
+
+      Config = Configurator.new
+      Config.git_repo = "."
+      
       @report = Report.new
     end
 

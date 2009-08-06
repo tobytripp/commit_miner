@@ -4,7 +4,8 @@ require 'activerecord'
 
 ENV["DB_ENV"] = ENV["APP_ENV"] = "test"
 
-require File.expand_path( File.dirname(__FILE__) + "/../commit_stats" )
+$LOAD_PATH <<  File.expand_path( File.dirname(__FILE__) + "/../lib" )
+require "commit_stats"
 
 begin
   old_stream = STDOUT.dup

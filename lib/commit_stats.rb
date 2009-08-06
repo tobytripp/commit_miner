@@ -1,7 +1,5 @@
-$LOAD_PATH << File.expand_path( File.dirname(__FILE__) + "/lib" )
-APP_ROOT = File.expand_path File.dirname(__FILE__)
+APP_ROOT = File.expand_path File.join( File.dirname(__FILE__), '..' )
 
-require "rubygems"
 require "database"
 require "commit_stats/configurator"
 require "commit_stats/report"
@@ -13,6 +11,6 @@ unless File.exists? DB_PATH
 
   puts "Initializing database in #{DB_PATH}"
   
-  load "Rakefile"
+  load File.expand_path( "#{APP_ROOT}/Rakefile" )
   Rake::Task["db:migrate"].invoke
 end

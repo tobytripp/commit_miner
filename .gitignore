@@ -1,2 +1,3 @@
 db/*.sqlite3
 commit_stats.config.rb
+pkg

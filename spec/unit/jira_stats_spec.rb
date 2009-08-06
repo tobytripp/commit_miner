@@ -1,33 +1,52 @@
 require File.expand_path( File.dirname(__FILE__) + "/../spec_helper" )
 require "open-uri"
+require "ostruct"
+
+class Hash
+  def to_query
+    self.map { |k, v| "#{k}=#{v}" }.sort.join "&"
+  end
+end
 
 module CommitStats
   describe Miner::Jira do
     before :all do
-      @jira_report = File.read File.dirname(__FILE__) + "/../fixtures/jira_stats.html"
+      @jira_report = File.read File.dirname(__FILE__) +
+        "/../fixtures/jira_stats.html"
     end
     
     before :each do
-      @stats = Miner::Jira.new "http://my.jira.com"
+      uri = URI::parse "http://my.jira.com"
+      @stats = Miner::Jira.new uri
       
-      uri = URI::parse( "http://my.jira.com" )
+      @mech = OpenStruct.new :html_parser => Nokogiri::HTML
       
-      stub( WWW::Mechanize ).new {
-        agent = stub( Object.new )
-        agent.get( @stats.report_url ) {
-          WWW::Mechanize::Page.new uri, { "content-type" => "text/html" }, @jira_report
-        }
-        agent
-      }
+      agent = stub( WWW::Mechanize.new )
+      agent.get do
+        page = WWW::Mechanize::Page.new uri,
+          { "content-type" => "text/html" },
+          @jira_report
+        page.mech = @mech
+        page
+      end
+      
+      stub( WWW::Mechanize ).new { agent }
     end
   
     it "should generate the proper Jira report URL" do
-      @stats.report_url.should ==
-        "http://my.jira.com/jira/secure/ConfigureReport.jspa?"\
-        "cumulative=false&daysprevious=360&periodName=daily&"\
-        "projectOrFilterId=project-10010&"\
-        "reportKey=com.atlassian.jira.ext.charting%3Acreatedvsresolved-report&"\
-        "selectedProjectId=10010&versionLabels=major"
+      query = {
+        :cumulative        => false,
+        :daysprevious      => 360,
+        :periodName        => 'daily',
+        :projectOrFilterId => 'project-10010',
+        :reportKey         =>
+          'com.atlassian.jira.ext.charting%3Acreatedvsresolved-report',
+        :selectedProjectId => 10010,
+        :versionLabels     => 'major'
+      }.to_query
+
+      @stats.report_url.request_uri.should ==
+        "/jira/secure/ConfigureReport.jspa?#{query}"
     end
     
     it "should request the page and record the bug counts" do

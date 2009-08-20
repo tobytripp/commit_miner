@@ -19,6 +19,10 @@ module CommitStats
       self.pair1, self.pair2 = pair_data.split( /,|\/|\\/ )
     end
     
+    def bug!( value=true )
+      self.update_attribute( :caused_bug, value )
+    end
+    
     def diff
       @diff ||= ""
     end

@@ -55,6 +55,7 @@ if __FILE__ == $PROGRAM_NAME
     File.expand_path "~/Documents/Code/stats.#{Time.now.strftime('%d%b%Y')}.csv"
   report_only = false
   run_report  = :tests_and_cowboys
+  log_level   = Logger::WARN
 
   opts = OptionParser.new
   opts.on( "-h", "--help" )          { RDoc::usage 1 }
@@ -62,12 +63,14 @@ if __FILE__ == $PROGRAM_NAME
   opts.on( "-s", "--since  DATE" )   { |date|   since_date = date}
   opts.on( "-r", "--report REPORT" ) { |report| run_report = report }
   opts.on( "-n", "--no-mining" )     { report_only = true }
+  opts.on( "-v", "--verbose" )       { log_level = Logger::DEBUG }
   opts.parse!( ARGV ) rescue RDoc::usage( 'usage' )
 
   report = CommitStats::Report.new(
     :since_date  => since_date,
     :output_path => outfile,
-    :report_only => report_only
+    :report_only => report_only,
+    :log_level   => log_level
   )
   
   report.generate

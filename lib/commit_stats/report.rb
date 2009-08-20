@@ -6,11 +6,15 @@ require "commit_stats/miner/cruise_control" unless defined? CommitStats::Miner::
   require "commit_stats/models/#{model}"
 end
 
-%w[commits tests_and_cowboys].each do |report|
+%w[commits tests_and_cowboys bug_fixes].each do |report|
   require "commit_stats/reporter/#{report}"
 end
 
 module CommitStats
+  LOG = Logger.new( STDOUT )
+  
+  def log() LOG; end
+  
   class Report
     attr_reader   :stats
     attr_accessor :since_date, :output_path, :git_log, :report_only
@@ -21,6 +25,8 @@ module CommitStats
         Miner::Jira.new( Config.jira_url),
         Miner::CruiseControl.new( Config.cruise_url, Config.cruise_project )
       ]
+
+      LOG.level = options.delete(:log_level) || Logger::WARN
 
       options.keys.each do |option|
         send( "#{option}=", options[option] ) if options[option]

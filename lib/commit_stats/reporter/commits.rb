@@ -9,7 +9,8 @@ module CommitStats::Reports
           csv << [
             commit.date.strftime( "=DATE( %Y,%m,%d )" ),
             commit.svn_revision,
-            commit.pair,
+            commit.pair1,
+            commit.pair2,
             commit.author,
             commit.cowboy? ? 1 : 0,
             commit.tested? ? 0 : 1,

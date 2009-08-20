@@ -36,7 +36,7 @@
 # For running in development
 if File.directory?( File.expand_path( File.dirname(__FILE__) + "/../lib" ) )
   require "rubygems"
-  $LOAD_PATH << File.expand_path( File.dirname(__FILE__) + "/../lib" )
+  $LOAD_PATH.unshift File.expand_path( File.dirname(__FILE__) + "/../lib" )
 end
 
 begin
@@ -50,16 +50,18 @@ require "rdoc/usage"
 require "optparse"
 
 if __FILE__ == $PROGRAM_NAME
-  since_date = "2008-12-01"
+  since_date = nil
   outfile    =
     File.expand_path "~/Documents/Code/stats.#{Time.now.strftime('%d%b%Y')}.csv"
   report_only = false
+  run_report  = :tests_and_cowboys
 
   opts = OptionParser.new
-  opts.on( "-h", "--help" )        { RDoc::usage 1 }
-  opts.on( "-o", "--output PATH" ) { |path| outfile    = path }
-  opts.on( "-s", "--since  DATE" ) { |date| since_date = date}
-  opts.on( "-r", "--report-only" ) { report_only = true }
+  opts.on( "-h", "--help" )          { RDoc::usage 1 }
+  opts.on( "-o", "--output PATH" )   { |path|   outfile    = path }
+  opts.on( "-s", "--since  DATE" )   { |date|   since_date = date}
+  opts.on( "-r", "--report REPORT" ) { |report| run_report = report }
+  opts.on( "-n", "--no-mining" )     { report_only = true }
   opts.parse!( ARGV ) rescue RDoc::usage( 'usage' )
 
   report = CommitStats::Report.new(
@@ -69,5 +71,5 @@ if __FILE__ == $PROGRAM_NAME
   )
   
   report.generate
-  puts report.tests_and_cowboys.to_csv
+  puts report.run( run_report ).to_csv
 end

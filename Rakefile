@@ -67,10 +67,11 @@ spec = Gem::Specification.new do |s|
   s.has_rdoc = true
   s.extra_rdoc_files = ["README.rdoc"]
   
-  s.add_dependency "rake",         ">= 0.8.7"
-  s.add_dependency "git",          ">= 1.0.5"
-  s.add_dependency "mechanize",    ">= 0.9.3"
-  s.add_dependency "activerecord", ">= 2.3.2"
+  s.add_dependency "rake",          ">= 0.8.7"
+  s.add_dependency "git",           ">= 1.0.5"
+  s.add_dependency "mechanize",     ">= 0.9.3"
+  s.add_dependency "activerecord",  ">= 2.3.2"
+  s.add_dependency "activesupport", ">= 2.3.2"
   
   s.add_development_dependency 'rspec', ">= 1.2.8"
   s.add_development_dependency 'rr'

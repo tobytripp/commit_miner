@@ -10,6 +10,10 @@ module CommitStats
       sum 'testcase_count'
     end
   
+    def self.most_recent
+      find :first, :order => "date DESC"
+    end
+  
     def pair=( pair_data )
       return if pair_data.nil?
       self.pair1, self.pair2 = pair_data.split( /,|\/|\\/ )
@@ -33,7 +37,10 @@ module CommitStats
     end
     
     def tested?
-      changeset.detect { |path| !(path =~ /vendor|lib/) && path =~ /_spec\.rb|[Tt]est\.java|test\.html|_spec\.js/ }
+      changeset.detect { |path|
+        !(path =~ /vendor|lib/) &&
+        path =~ /_spec\.rb|[Tt]est\.java|test\.html|_spec\.js/
+      }
     end
   
     def cowboy?

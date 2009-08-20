@@ -32,6 +32,11 @@ module CommitStats
     def generate
       @stats.each { |stat| stat.gather_statistics } unless report_only?
     end
+    
+    def run( report_name )
+      report_class = ('::CommitStats::Reports::' + report_name.camelize).constantize
+      report_class.new
+    end
 
     def commits
       Reports::Commits.new

@@ -5,10 +5,14 @@ require 'git'
 module CommitStats
   module Miner
     class Git
-      def initialize( repo_path, since_date="2 years ago" )
+      DEFAULT_MINER_DATE = "2 years ago"
+      
+      def initialize( repo_path, since_date=nil )
         @git = ::Git.open repo_path
-        @since_date = since_date
-        @log = @git.log( 100000 ).since since_date
+
+        @since_date = determine_start_date since_date
+        
+        @log = @git.log( 100000 ).since @since_date
       end
     
       def gather_statistics
@@ -45,6 +49,13 @@ module CommitStats
           end
         end
         puts "Done!"
+      end
+
+      def determine_start_date( given_date=nil )
+        return given_date if given_date
+        
+        last_commit = Commit.most_recent
+        last_commit ? last_commit.date.to_s : DEFAULT_MINER_DATE
       end
     end
   end

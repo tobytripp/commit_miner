@@ -1,17 +1,26 @@
 #!/usr/bin/env ruby -KU
 
-# == Synopsis
+#=Synopsis
 #   Gather statistics from git diff data, Jira reports, and Cruise Control
 #
-# == Usage
-#   commitstats [-h|--help] [-o|--output PATH] [-s|--since DATE]
+#=Usage
+#   commitstats [options]
 # 
-# PATH::
-#   The path to write the statistics data to.
-# DATE::
-#   Tell git to go back to DATE when gathering log data.
+# OPTIONS
+#   -h --help :: Print this message
 # 
-#--
+#   -s --since DATE :: Tell git to go back to DATE when gathering log data.
+#
+#   -r --report REPORT :: Run the specified report.
+#
+#   -n --no-mining :: Do not run the miners, only run reports.
+#
+#   -l --list-reports :: List the available reports to run.
+#
+#   -v --verbose :: Run with additional output
+#
+#
+#=LICENSE
 # Copyright (c) 2009  Toby Tripp
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -31,7 +40,6 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
-#++
 
 # For running in development
 if File.directory?( File.expand_path( File.dirname(__FILE__) + "/../lib" ) )
@@ -50,25 +58,28 @@ require "rdoc/usage"
 require "optparse"
 
 if __FILE__ == $PROGRAM_NAME
-  since_date = nil
-  outfile    =
-    File.expand_path "~/Documents/Code/stats.#{Time.now.strftime('%d%b%Y')}.csv"
+  since_date  = nil
   report_only = false
   run_report  = :tests_and_cowboys
   log_level   = Logger::WARN
+  list_reports = false
 
   opts = OptionParser.new
-  opts.on( "-h", "--help" )          { RDoc::usage 1 }
-  opts.on( "-o", "--output PATH" )   { |path|   outfile    = path }
-  opts.on( "-s", "--since  DATE" )   { |date|   since_date = date}
+  opts.on( "-h", "--help" )          { RDoc::usage 1, "Synopsis", "Usage" }
+  opts.on( "-s", "--since  DATE" )   { |date|   since_date = date }
   opts.on( "-r", "--report REPORT" ) { |report| run_report = report }
   opts.on( "-n", "--no-mining" )     { report_only = true }
+  opts.on( "-l", "--list-reports" )  { list_reports = true }
   opts.on( "-v", "--verbose" )       { log_level = Logger::DEBUG }
   opts.parse!( ARGV ) rescue RDoc::usage( 'usage' )
 
+  if list_reports
+    puts CommitStats::Report.available_reports.sort.join( ", " )
+    exit 0
+  end
+  
   report = CommitStats::Report.new(
     :since_date  => since_date,
-    :output_path => outfile,
     :report_only => report_only,
     :log_level   => log_level
   )

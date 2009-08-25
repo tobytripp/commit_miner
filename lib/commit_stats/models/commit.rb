@@ -6,6 +6,8 @@ module CommitStats
     
     attr_accessor :diff
     
+    named_scope :bugs, :conditions => "caused_bug is not null";
+    
     def self.total_testcases
       sum 'testcase_count'
     end
@@ -19,10 +21,13 @@ module CommitStats
       self.pair1, self.pair2 = pair_data.split( /,|\/|\\/ )
     end
     
-    def bug!( value=true )
-      self.update_attribute( :caused_bug, value )
+    def bug!( bug_name )
+      bug_list = self.caused_bug || ""
+      bug_list = bug_list.split ","
+      new_list = [bug_list, bug_name].flatten.map(&:strip).uniq
+      self.update_attribute( :caused_bug, new_list.join( ", " ) )
     end
-    
+      
     def diff
       @diff ||= ""
     end
@@ -48,7 +53,7 @@ module CommitStats
     end
   
     def cowboy?
-      !(pair1 && pair2)
+      !(pair1.blank? && pair2.blank?)
     end
       
     def to_a

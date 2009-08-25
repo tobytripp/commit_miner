@@ -19,6 +19,16 @@ module CommitStats
     attr_reader   :stats
     attr_accessor :since_date, :output_path, :git_log, :report_only
 
+    REPORT_PATH = File.expand_path( File.dirname(__FILE__) + "/reporter" )
+
+    def self.available_reports
+      CommitStats::LOG.debug "Finding reports in path: #{REPORT_PATH}"
+      
+      Dir["#{REPORT_PATH}/**/*.rb"].map { |path|
+        File.basename( path, ".rb" )
+      }
+    end
+
     def initialize( options={} )
       @stats = options[:statistics] || [
         Miner::Git.new(  Config.git_repo, options[:since_date] ),

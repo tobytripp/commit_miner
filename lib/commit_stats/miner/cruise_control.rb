@@ -5,9 +5,9 @@ require "mechanize"
 module CommitStats
   module Miner
     class CruiseControl
-      def initialize( cruise_url, project )
-        @url     = cruise_url
-        @project = project
+      def initialize( options={} )
+        @url     = Config.cruise_url
+        @project = Config.cruise_project
       end
   
       def generate_statistics

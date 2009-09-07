@@ -1,6 +1,6 @@
-require "commit_stats/miner/git"  unless defined? CommitStats::Miner::Git
-require "commit_stats/miner/jira" unless defined? CommitStats::Miner::Jira
-require "commit_stats/miner/cruise_control" unless defined? CommitStats::Miner::CruiseControl
+require "commit_stats/miner/git"
+require "commit_stats/miner/jira"
+require "commit_stats/miner/cruise_control"
 
 %w[commit bug_count broken_build].each do |model|
   require "commit_stats/models/#{model}"
@@ -12,12 +12,13 @@ end
 
 module CommitStats
   LOG = Logger.new( STDOUT )
-  
   def log() LOG; end
   
   class Report
-    attr_reader   :stats
-    attr_accessor :since_date, :output_path, :git_log, :report_only
+    attr_reader   :miner
+    attr_accessor :since_date, :report_only, :multiprocess
+    alias_method :report_only?,  :report_only
+    alias_method :multiprocess?, :multiprocess
 
     REPORT_PATH = File.expand_path( File.dirname(__FILE__) + "/reporter" )
 
@@ -30,36 +31,52 @@ module CommitStats
     end
 
     def initialize( options={} )
-      @stats = options[:statistics] || [
-        Miner::Git.new(  Config.git_repo, options[:since_date] ),
-        Miner::Jira.new( Config.jira_url),
-        Miner::CruiseControl.new( Config.cruise_url, Config.cruise_project )
-      ]
+      miners = options.delete(:miners) || [ "git", "jira", "cruise_control" ]
+      @miners = create_miners( miners, options )
+      self.multiprocess = true
 
-      LOG.level = options.delete(:log_level) || Logger::WARN
+      CommitStats::LOG.level = options.delete(:log_level) || Logger::WARN
 
       options.keys.each do |option|
-        send( "#{option}=", options[option] ) if options[option]
+        self.send( "#{option}=".to_sym, options[option] ) unless options[option].nil?
       end
     end
 
-    def report_only?() report_only; end
-
     def generate
-      @stats.each { |stat| stat.gather_statistics } unless report_only?
+      unless report_only?
+        CommitStats::LOG.info "running miners…"
+        @miners.each do |miner|
+          mine = lambda {
+            miner.gather_statistics
+            CommitStats::LOG.info "#{miner.class.name} Finished"
+          }
+          
+          if multiprocess?
+            fork &mine
+          else
+            mine.call
+          end
+        end
+        
+        CommitStats::LOG.info "waiting for miners to complete…"
+        Process.waitall
+        CommitStats::LOG.info "miners complete."
+      end
     end
     
     def run( report_name )
+      CommitStats::LOG.info "running report #{report_name}…"
       report_class = ('::CommitStats::Reports::' + report_name.camelize).constantize
       report_class.new
     end
-
-    def commits
-      Reports::Commits.new
-    end
-
-    def tests_and_cowboys
-      Reports::TestsAndCowboys.new
+    
+    protected
+    
+    def create_miners( miner_list, options )
+      miner_list.map { |miner_name| 
+        miner_class = ('::CommitStats::Miner::' + miner_name.camelize).constantize
+        miner_class.new options
+      }
     end
   end
 end

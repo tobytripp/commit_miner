@@ -14,7 +14,7 @@ module CommitStats::Reports
     def gather_bugged_shas
       commits = CommitStats::Commit.find( :all,
         :order      => "date ASC",
-        :conditions => ["feature LIKE ?", "%MMH-%"]
+        :conditions => ["feature LIKE ?", "%#{CommitStats::Config.bug_feature}%"]
       )
       
       data = []

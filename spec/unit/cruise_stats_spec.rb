@@ -3,8 +3,11 @@ require File.expand_path( File.dirname(__FILE__) + "/../spec_helper" )
 module CommitStats
   describe "Cruise Statistics" do
     before :all do
-      @cruise_report = File.read File.dirname(__FILE__) + "/../fixtures/cruise.html"
-      @cruise_detail = File.read File.dirname(__FILE__) + "/../fixtures/cruise_fail_detail.html"
+      @cruise_report =
+        File.read File.dirname(__FILE__) + "/../fixtures/cruise.html"
+      @cruise_detail =
+        File.read File.dirname(__FILE__) +
+          "/../fixtures/cruise_fail_detail.html"
     end
     
     before :each do
@@ -33,10 +36,9 @@ module CommitStats
         agent
       end
       
-      @cruise_stats = CommitStats::Miner::CruiseControl.new( 
-        "http://my.cruise.com",
-        "my_project"
-      )
+      Config.cruise_url     = "http://my.cruise.com"
+      Config.cruise_project = "my_project"
+      @cruise_stats = CommitStats::Miner::CruiseControl.new
     end
     
     it "should read the data from the cruise dashboard" do

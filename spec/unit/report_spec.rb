@@ -3,18 +3,19 @@ require File.expand_path( File.dirname(__FILE__) + "/../spec_helper" )
 module CommitStats
   describe Report do
     before :each do
+      Config.jira_url = "jira.com"
+      Config.jira_project_id = "1001"
+      Config.git_repo = "."
+      
       @git    = mock( Miner::Git.new "." )
-      @cruise = mock( Miner::CruiseControl.new "", "foo" )
+      @cruise = mock( Miner::CruiseControl.new )
       @jira   = mock( Miner::Jira.new "" )
     
       stub( Miner::Git  ).new { @git }
-      stub( Miner::CruiseControl ).new { @cruise }
       stub( Miner::Jira ).new { @jira }
-
-      Config = Configurator.new
-      Config.git_repo = "."
+      stub( Miner::CruiseControl ).new { @cruise }
       
-      @report = Report.new
+      @report = Report.new :multiprocess => false
     end
 
     it "should call #gather_statistics on each statistic object" do

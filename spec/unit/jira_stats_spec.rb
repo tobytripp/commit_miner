@@ -16,14 +16,15 @@ module CommitStats
     end
     
     before :each do
-      uri = URI::parse "http://my.jira.com"
-      @stats = Miner::Jira.new uri
+      Config.jira_url = "http://my.jira.com"
+      Config.jira_project_id = "1001"
+      @stats = Miner::Jira.new
       
       @mech = OpenStruct.new :html_parser => Nokogiri::HTML
       
       agent = stub( WWW::Mechanize.new )
       agent.get do
-        page = WWW::Mechanize::Page.new uri,
+        page = WWW::Mechanize::Page.new URI.parse( Config.jira_url ),
           { "content-type" => "text/html" },
           @jira_report
         page.mech = @mech
@@ -38,14 +39,14 @@ module CommitStats
         :cumulative        => false,
         :daysprevious      => 360,
         :periodName        => 'daily',
-        :projectOrFilterId => 'project-10010',
+        :projectOrFilterId => 'project-1001',
         :reportKey         =>
           'com.atlassian.jira.ext.charting%3Acreatedvsresolved-report',
-        :selectedProjectId => 10010,
+        :selectedProjectId => 1001,
         :versionLabels     => 'major'
       }.to_query
 
-      @stats.report_url.request_uri.should ==
+      URI.parse( @stats.report_url ).request_uri.should ==
         "/jira/secure/ConfigureReport.jspa?#{query}"
     end
     

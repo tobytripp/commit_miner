@@ -6,7 +6,7 @@ module CommitStats
     
     attr_accessor :diff
     
-    named_scope :bugs, :conditions => "caused_bug is not null";
+    named_scope :bugs, :conditions => "caused_bug IS NOT NULL";
     
     def self.total_testcases
       sum 'testcase_count'
@@ -53,7 +53,7 @@ module CommitStats
     end
   
     def cowboy?
-      !(pair1.blank? && pair2.blank?)
+      pair2.blank?
     end
       
     def to_a

@@ -7,10 +7,9 @@ module CommitStats
     class Git
       DEFAULT_MINER_DATE = "2 years ago"
       
-      def initialize( repo_path, since_date=nil )
-        @git = ::Git.open repo_path
-
-        @since_date = determine_start_date since_date
+      def initialize( options={} )
+        @git = ::Git.open Config.git_repo
+        @since_date = determine_start_date options[:since_date]
         
         @log = @git.log( 100000 ).since @since_date
       end

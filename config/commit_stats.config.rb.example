@@ -1,7 +1,14 @@
 configurate do |config|
   config.git_repo       = "."
+  
   config.jira_url       = "http://jira"
+  config.jira_project_id = "42"
 
   config.cruise_url     = 'http://jira'
   config.cruise_project = "my_project"
+  
+  # Snippet of text that identifies a Bug feature in a commit message
+  # e.g.: 'BUG:' would match a commit message like:
+  #       Bob/Sally [BUG: 49] - Fixed bug 49 by changing javascript
+  config.bug_feature    = "BUG:"
 end

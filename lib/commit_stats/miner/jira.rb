@@ -2,32 +2,38 @@
 require "rubygems"
 require "mechanize"
 
+class Hash
+  def to_query
+    map { |key, value| "#{key}=#{value}" }.sort.join( "&" )
+  end
+end
+
 module CommitStats
   module Miner
     class Jira
       REPORT_PATH = "/jira/secure/ConfigureReport.jspa"
-      REPORT_OPTIONS = {
-        :projectOrFilterId => "project-10010",
-        :periodName        => "daily",
-        :daysprevious      => "360", 
-        :cumulative        => "false", 
-        :versionLabels     => "major",
-        :selectedProjectId => "10010", 
-        :reportKey => "com.atlassian.jira.ext.charting%3Acreatedvsresolved-report"
-      }
-  
-      def REPORT_OPTIONS.to_query
-        "?" + map { |key, value| "#{key}=#{value}" }.sort.join( "&" )
+      
+      def self.report_options
+        {
+          :projectOrFilterId => "project-#{Config.jira_project_id}",
+          :periodName        => "daily",
+          :daysprevious      => "360", 
+          :cumulative        => "false", 
+          :versionLabels     => "major",
+          :selectedProjectId => Config.jira_project_id, 
+          :reportKey => "com.atlassian.jira.ext.charting%3Acreatedvsresolved-report"
+        }
       end
-  
+
       attr_reader :report_url
 
-      def initialize( jira_url )
-        @report_url = jira_url + REPORT_PATH + REPORT_OPTIONS.to_query
+      def initialize( options={} )
+        @report_url =
+          Config.jira_url + REPORT_PATH + "?" + self.class.report_options.to_query
       end
   
       def generate_statistics
-        puts "Generating bug report from #{@report_url}…"
+        CommitStats::LOG.info "Generating bug report from #{@report_url}…"
         agent = WWW::Mechanize.new
         page  = agent.get @report_url
 
@@ -39,7 +45,7 @@ module CommitStats
         end
         self
       rescue SocketError => e
-        puts "Problem loading '#{@report_url}'", e.message
+        CommitStats::LOG.error "Problem loading '#{@report_url}'" + e.message
       end
       alias_method :gather_statistics, :generate_statistics
   

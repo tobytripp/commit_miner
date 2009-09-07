@@ -10,9 +10,10 @@ module CommitStats
       end
       stub( git ).dir { stub( Object.new ).path {'.'} }
       
+      Config.git_repo = '.'
       mock( ::Git ).open( '.' ) { git }
       
-      @commits = Miner::Git.new( '.' ).gather_statistics
+      @commits = Miner::Git.new.gather_statistics
     end
     
     describe "parse_log" do

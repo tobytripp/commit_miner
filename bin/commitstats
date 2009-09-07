@@ -13,6 +13,8 @@
 #
 #   -r --report REPORT :: Run the specified report.
 #
+#   -m --miners MINER[,MINER] :: Run the specified miners.
+#
 #   -n --no-mining :: Do not run the miners, only run reports.
 #
 #   -l --list-reports :: List the available reports to run.
@@ -60,7 +62,8 @@ require "optparse"
 if __FILE__ == $PROGRAM_NAME
   since_date  = nil
   report_only = false
-  run_report  = :tests_and_cowboys
+  run_report  = "tests_and_cowboys"
+  run_miners  = nil
   log_level   = Logger::WARN
   list_reports = false
 
@@ -68,6 +71,7 @@ if __FILE__ == $PROGRAM_NAME
   opts.on( "-h", "--help" )          { RDoc::usage 1, "Synopsis", "Usage" }
   opts.on( "-s", "--since  DATE" )   { |date|   since_date = date }
   opts.on( "-r", "--report REPORT" ) { |report| run_report = report }
+  opts.on( "-m", "--miner  MINERS" ) { |miners|  run_miners = miners }
   opts.on( "-n", "--no-mining" )     { report_only = true }
   opts.on( "-l", "--list-reports" )  { list_reports = true }
   opts.on( "-v", "--verbose" )       { log_level = Logger::DEBUG }
@@ -81,6 +85,7 @@ if __FILE__ == $PROGRAM_NAME
   report = CommitStats::Report.new(
     :since_date  => since_date,
     :report_only => report_only,
+    :miners      => run_miners ? run_miners.split(",") : nil,
     :log_level   => log_level
   )
   

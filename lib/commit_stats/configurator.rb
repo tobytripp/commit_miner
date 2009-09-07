@@ -4,7 +4,12 @@ module CommitStats
   end
   
   class Configurator
-    attr_accessor :cruise_url, :cruise_project, :git_repo, :jira_url
+    attr_accessor(
+      :cruise_url,
+      :cruise_project,
+      :git_repo,
+      :jira_url
+    )
     
     def self.load( config_data="" )
       config = new config_data
@@ -12,6 +17,15 @@ module CommitStats
     
     def initialize( config_data="" )
       eval config_data, binding, __FILE__, __LINE__
+    end
+    
+    def method_missing( method_name, *args )
+      if method_name.to_s =~ /([^=]+)=$/
+        self.class.class_eval "attr_accessor :#{$1}"
+        self.send method_name, args
+      else
+        raise ConfigError, "'#{method_name}' is not defined"
+      end
     end
     
     def configure( &block )
@@ -35,5 +49,7 @@ module CommitStats
     puts "Loading configuration at #{CONFIG_PATH}/commit_stats.config.rb"
     Config =
       Configurator.load File.read( File.join( CONFIG_PATH, "commit_stats.config.rb" ) )
+  else
+    Config = Configurator.new
   end
 end

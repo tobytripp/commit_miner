@@ -17,5 +17,16 @@ module CommitStats
       @config.cruise_url.should == "http://cruise"
       @config.jira_url.should   == "http://jira"
     end
+    
+    it "should dynamically provide variables on demand" do
+      @config.foo_bar = true
+      @config.foo_bar.should be_true
+    end
+    
+    it "should display a useful-ish message if the variable is undefined" do
+      lambda {
+        @config.snafu  
+      }.should raise_error( ConfigError, "'snafu' is not defined" )
+    end
   end
 end
